@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<head>
+
+<!-- Basic Page Needs
+================================================== -->
+<title>Sperbag：行李重量分享平台</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+================================================== -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/colors/main.css" id="colors">
+
+</head>
+
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header Container
+================================================== -->
+<header id="header-container">
+
+	<!-- Header -->
+	<div id="header" class="not-sticky">
+		<div class="container">
+			
+			<!-- Left Side Content -->
+			<div class="left-side">
+				
+				<!-- Logo -->
+				<div id="logo">
+					<a href="index.html"><img src="images/logo.png" alt=""></a>
+				</div>
+
+				<!-- Mobile Navigation -->
+				<div class="mmenu-trigger">
+					<button class="hamburger hamburger--collapse" type="button">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</div>
+
+				<!-- Main Navigation -->
+				<nav id="navigation" class="style-1">
+					<ul id="responsive">
+
+						<li><a href="listings-list-full-width.html">尋找重量</a>
+							
+						</li>
+						 <li><a href="listings-list-full-width.html">提供重量</a>
+							
+						</li>
+						
+					</ul>
+				</nav>
+				<div class="clearfix"></div>
+				<!-- Main Navigation / End -->
+				
+			</div>
+			<!-- Left Side Content / End -->
+
+			<!-- Right Side Content / End -->
+			<div class="right-side">
+				<div class="header-widget">
+				   
+					<a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim">登入/註冊</a>
+					<a href="dashboard-add-listing.html" class="button border with-icon">發布重量 <i class="sl sl-icon-plus"></i></a>
+				</div>
+			</div>
+			<!-- Right Side Content / End -->
+
+			<!-- Sign In Popup -->
+			<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+
+				<div class="small-dialog-header">
+					<h3>Sign In</h3>
+				</div>
+
+				<!--Tabs -->
+				<div class="sign-in-form style-1">
+
+					<ul class="tabs-nav">
+						<li class=""><a href="#tab1">登入</a></li>
+						<li><a href="#tab2">註冊</a></li>
+					</ul>
+
+					<div class="tabs-container alt">
+
+						<!-- Login -->
+						<div class="tab-content" id="tab1" style="display: none;">
+							<form method="post" class="login">
+
+								<p class="form-row form-row-wide">
+									<label for="username">帳號:
+										<i class="im im-icon-Male"></i>
+										<input type="text" class="input-text" name="username" id="username" value="" />
+									</label>
+								</p>
+
+								<p class="form-row form-row-wide">
+									<label for="password">密碼:
+										<i class="im im-icon-Lock-2"></i>
+										<input class="input-text" type="password" name="password" id="password"/>
+									</label>
+									<span class="lost_password">
+										<a href="#" >忘記密碼?</a>
+									</span>
+								</p>
+
+								<div class="form-row ">
+								<div style="text-align: center;">
+									<input type="submit" class="button border margin-top-5" name="login" value="登入" /></div>
+								<!--	
+									<div class="checkboxes margin-top-10">
+										<input id="remember-me" type="checkbox" name="check">
+										<label for="remember-me">Remember Me</label>
+									</div>
+								-->	
+								</div>
+								
+							</form>
+						</div>
+
+						<!-- Register -->
+						<div class="tab-content" id="tab2" style="display: none;">
+
+							<form method="post" class="register">
+								
+							<p class="form-row form-row-wide">
+								<label for="username2">帳號:
+									<i class="im im-icon-Male"></i>
+									<input type="text" class="input-text" name="username" id="username2" value="" />
+								</label>
+							</p>
+								
+							<p class="form-row form-row-wide">
+								<label for="email2">電子郵件:
+									<i class="im im-icon-Mail"></i>
+									<input type="text" class="input-text" name="email" id="email2" value="" />
+								</label>
+							</p>
+
+							<p class="form-row form-row-wide">
+								<label for="password1">密碼:
+									<i class="im im-icon-Lock-2"></i>
+									<input class="input-text" type="password" name="password1" id="password1"/>
+								</label>
+							</p>
+                        <!--
+							<p class="form-row form-row-wide">
+								<label for="password2">密碼驗證:
+									<i class="im im-icon-Lock-2"></i>
+									<input class="input-text" type="password" name="password2" id="password2"/>
+								</label>
+							</p>
+                        -->
+							<p class="form-row form-row-wide">
+								<label for="passportnumber">護照號碼:
+									<i class="im im-icon-Plane"></i>
+									<input type="text" class="input-text" name="passportnumber" id="passportnumber" value="" />
+								</label>
+							</p>
+                            <div style="text-align: center;">
+							<input type="submit" class="button border fw margin-top-10" name="register" value="註冊" /></div>
+	
+							</form>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<!-- Sign In Popup / End -->
+
+		</div>
+	</div>
+	<!-- Header / End -->
+
+</header>
+<div class="clearfix"></div>
+<!-- Header Container / End -->
+
+<!-- Titlebar
+================================================== -->
+<div id="titlebar" class="gradient">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="user-profile-titlebar">
+					<div class="user-profile-avatar"><img src="images/userphoto/person_3.jpg" alt=""></div>
+					<div class="user-profile-name">
+						<h2>Tom Perrin</h2>
+						<div class="star-rating" data-rating="5">
+							<div class="rating-counter"><a href="#listing-reviews">(60 reviews)</a></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Content
+================================================== -->
+<div class="container">
+	<div class="row sticky-wrapper">
+
+
+		<!-- Sidebar
+		================================================== -->
+		<div class="col-lg-4 col-md-4 margin-top-0">
+				
+			<!-- Verified Badge -->
+			<div class="verified-badge with-tip" data-tip-content="Account has been verified and belongs to the person or organization represented.">
+				<i class="sl sl-icon-user-following"></i> 賣家已驗證
+			</div>
+
+			<!-- Contact -->
+			<div class="boxed-widget margin-top-30 margin-bottom-50">
+				<h3>賣家資訊</h3>
+				<ul class="listing-details-sidebar">
+					<li><i class="sl sl-icon-options"></i> 累積分享重量：<a>12</a> kg</li>
+					<li><i class="sl sl-icon-options"></i> 累積使用重量：<a>7</a> kg</li>
+					<br>
+					<li><i class="sl sl-icon-user"></i> 個人簡介：</li>
+					<span>Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper</span>
+
+					<!--
+					<li><i class="fa fa-envelope-o"></i> <a href="#">tom@example.com</a></li>-->
+				</ul>
+				<!--
+				<ul class="listing-details-sidebar social-profiles">
+					<li><a href="#" class="facebook-profile"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+					<li><a href="#" class="twitter-profile"><i class="fa fa-twitter"></i> Twitter</a></li>
+					<li><a href="#" class="gplus-profile"><i class="fa fa-google-plus"></i> Google Plus</a></li> 
+				</ul>
+				-->
+
+				<!-- Reply to review popup -->
+				<div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+					<div class="small-dialog-header">
+						<h3>傳送訊息</h3>
+					</div>
+					<div class="message-reply margin-top-0">
+						<textarea cols="40" rows="3" placeholder="傳送訊息給...."></textarea>
+						<button class="button">傳送訊息</button>
+					</div>
+				</div>
+				<br>
+
+				<div style="text-align: center;">
+				<a href="#small-dialog" class="send-message-to-owner button popup-with-zoom-anim"><i class="sl sl-icon-envelope-open"></i> 傳送訊息</a></div>
+			</div>
+			<!-- Contact / End-->
+
+		</div>
+		<!-- Sidebar / End -->
+
+
+		<!-- Content
+		================================================== -->
+		<div class="col-lg-8 col-md-8 padding-left-30">
+
+			<h3 class="margin-top-0 margin-bottom-40">Tom's sharing</h3>
+
+			<!-- Listings Container -->
+			<div class="row">
+
+				<!-- Listing Item -->
+				<div class="col-lg-12 col-md-12">
+					<div class="listing-item-container list-layout">
+						<a href="listings-single-page.html" class="listing-item">
+							
+							<!-- Image -->
+							<div class="listing-item-image">
+								<img src="images/userphoto/person_3.jpg" alt="">
+								<span class="tag">NT 750/公斤</span>
+							</div>
+							
+							<!-- Content -->
+							<div class="listing-item-content">
+								
+
+								<div class="listing-item-inner">
+                                     
+									<h3>中華航空</h3>
+									<span>CI005</span><br>
+									
+									<h3 >台北-TPE&nbsp;<i style="color: #7ccad3" class="im im-icon-Arrow-Right"></i>&nbsp;洛杉磯-LAX&nbsp;</h3>
+									<span class="like-icon"></span>
+
+									
+								</div>
+
+                                <div class="listing-item-details">
+                                <h1 style="text-align: right; color: #7ccad3">2 kg</h1><br>
+                                </div>
+                                <div class="listing-item-details"> 2017-11-10
+
+                                </div>
+
+								
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- Listing Item / End -->
+
+				<!-- Listing Item -->
+				<div class="col-lg-12 col-md-12">
+					<div class="listing-item-container list-layout">
+						<a href="listings-single-page.html" class="listing-item">
+							
+							<!-- Image -->
+							<div class="listing-item-image">
+								<img src="images/userphoto/person_3.jpg" alt="">
+								<span class="tag">NT 600/公斤</span>
+							</div>
+							
+							<!-- Content -->
+							<div class="listing-item-content">
+
+								<div class="listing-item-inner">
+                                     
+									<h3>中華航空</h3>
+									<span>CI005</span><br>
+									
+									<h3 >台北-TPE&nbsp;<i style="color: #7ccad3" class="im im-icon-Arrow-Right"></i>&nbsp;洛杉磯-LAX&nbsp;</h3>
+									<span class="like-icon"></span>
+
+									
+								</div>
+
+                                <div class="listing-item-details">
+                                <h1 style="text-align: right; color: #7ccad3">4 kg</h1><br>
+                                </div>
+                                <div class="listing-item-details"> 2017-12-21
+
+                                </div>
+
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- Listing Item / End -->
+
+				<!-- Listing Item -->
+				<div class="col-lg-12 col-md-12">
+					<div class="listing-item-container list-layout">
+						<a href="listings-single-page.html" class="listing-item">
+							
+							<!-- Image -->
+							<div class="listing-item-image">
+								<img src="images/userphoto/person_3.jpg" alt="">
+								<span class="tag">NT 600/公斤</span>
+							</div>
+							
+							<!-- Content -->
+							<div class="listing-item-content">
+								<div class="listing-item-inner">
+                                     
+									<h3>日本航空</h3>
+									<span>NH824</span><br>
+									
+									<h3 >台北-TPE&nbsp;<i style="color: #7ccad3" class="im im-icon-Arrow-Right"></i>&nbsp;東京成田-NHD&nbsp;</h3>
+									<span class="like-icon"></span>
+
+									
+								</div>
+
+                                <div class="listing-item-details">
+                                <h1 style="text-align: right; color: #7ccad3">5 kg</h1><br>
+                                </div>
+                                <div class="listing-item-details"> 2018-01-06
+
+                                </div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- Listing Item / End -->
+
+				<div class="col-md-12 browse-all-user-listings">
+					<a href="#">顯示所有分享 <i class="fa fa-angle-right"></i> </a>
+				</div>
+
+			</div>
+			<!-- Listings Container / End -->
+
+				
+			<!-- Reviews -->
+			<div id="listing-reviews" class="listing-section">
+				<h3 class="margin-top-60 margin-bottom-20">評論</h3>
+
+				<div class="clearfix"></div>
+
+				<!-- Reviews -->
+				<section class="comments listing-reviews">
+
+					<ul>
+						<li>
+							<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
+							<div class="comment-content"><div class="arrow-comment"></div>
+								<div class="comment-by">Kathy Brown <div class="comment-by-listing"> <a href="#"></a></div> <span class="date">June 2017</span>
+									<div class="star-rating" data-rating="5"></div>
+								</div>
+								<p>Morbi velit eros, sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem, eu ultricies tortor imperdiet vitae. Curabitur lacinia neque non metus</p>
+								
+								
+							</div>
+						</li>
+
+						<li>
+							<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /> </div>
+							<div class="comment-content"><div class="arrow-comment"></div>
+								<div class="comment-by">John Doe <div class="comment-by-listing"> <a href="#"></a></div> <span class="date">May 2017</span>
+									<div class="star-rating" data-rating="4"></div>
+								</div>
+								<p>Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris.</p>
+							</div>
+						</li>
+
+						<li>
+							<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
+							<div class="comment-content"><div class="arrow-comment"></div>
+								<div class="comment-by">Kathy Brown <div class="comment-by-listing"><a href="#"></a></div> <span class="date">June 2017</span>
+									<div class="star-rating" data-rating="5"></div>
+								</div>
+								<p>Morbi velit eros, sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem, eu ultricies tortor imperdiet vitae. Curabitur lacinia neque non metus</p>
+								
+								
+							</div>
+						</li>
+
+						<li>
+							<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /> </div>
+							<div class="comment-content"><div class="arrow-comment"></div>
+								<div class="comment-by">John Doe <div class="comment-by-listing"><a href="#"></a></div> <span class="date">May 2017</span>
+									<div class="star-rating" data-rating="5"></div>
+								</div>
+								<p>Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris.</p>
+							</div>
+
+						</li>
+					 </ul>
+				</section>
+
+				<!-- Pagination -->
+				<div class="clearfix"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Pagination -->
+						<div class="pagination-container margin-top-30">
+							<nav class="pagination">
+								<ul>
+									<li><a href="#" class="current-page">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<!-- Pagination / End -->
+			</div>
+
+
+		</div>
+
+	</div>
+</div>
+
+
+<!-- Footer
+================================================== -->
+<div id="footer" class="margin-top-65">
+	<!-- Main -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<img class="footer-logo" src="images/logo.png" alt="">
+				<br><br>
+				<p>SPARBAG是一套更聰明、更便利的行李重量分享平台。藉由社群形成共享生態圈，利用同一航班去程與回程旅客行李重量落差，將重量的主導權還給每一為旅客，SPARBAG全力打造更具安全與信譽的共享未來，帶領旅人以
+「分享」建構未來的旅遊新世界。</p>
+
+			</div>
+            
+			<div class="col-md-3 col-sm-6 ">
+				<h4>探索</h4>
+				<ul class="footer-links">
+					<li><a href="pages-blog.html">旅遊誌</a></li>
+					<li><a href="#">託運行李</a></li>
+					<li><a href="#">運送行李</a></li>
+					<li><a href="#">信任與安全</a></li>
+					<li><a href="#">運送義務</a></li>
+					<li><a href="#">SparStation</a></li>
+				</ul>
+				<ul class="footer-links">
+					<li><a href="#">常見問題</a></li>
+					<li><a href="#">部落格</a></li>
+					<li><a href="#">關於我們</a></li>
+					<li><a href="#">如何運作</a></li>
+					<li><a href="pages-contact.html">聯絡我們</a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>		
+
+			<div class="col-md-3  col-sm-10">
+				<h4>聯絡我們</h4>
+				<div class="text-widget">
+					<span>51591 彰化縣大村鄉學府路168號</span> <br>
+					聯絡電話: <span>(0917) 680-220 </span><br>
+					聯絡電話: <span>(0903) 501-689 </span><br>
+					E-Mail:<span> <a href="#">sparbag2017@gmail.com</a> </span><br>
+				</div>
+
+				<ul class="social-icons margin-top-10">
+					<li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+					<li><a class="instagram" href="#"><i class="icon-instagram"></i></a></li>
+					<li><a class="youtube" href="#"><i class="icon-youtube"></i></a></li>
+					<!--
+					<li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
+					<li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li>-->
+				</ul>
+
+			</div>
+			<div class="col-md-2 col-sm-6 ">
+				<h4></h4><br>
+				<div class="col-md-14">
+						<select class="chosen-select" >
+							<option label="blank">繁體中文</option>
+							<option>簡體中文</option>
+							<option>日本語</option>
+							<option>한국어</option>
+							<option>English-US</option>
+							<option>English-UK</option>
+							<option>Français</option>
+							<option>Deutsch</option>
+							<option>ไทย</option>
+							<option>Nederlands</option>
+						</select>
+				</div><br>
+				<div class="col-md-14">
+						<select class="chosen-select" >
+							<option label="blank">新台幣</option>
+							<option>美元</option>
+							<option>日元</option>
+							<option>人民幣</option>
+							<option>歐元</option>
+							<option>英鎊</option>
+							<option>韓圜</option>
+							<option>港幣</option>
+						</select>
+				</div><br>
+				<div class="clearfix"></div>
+			</div>	
+
+		</div>
+		
+		<!-- Copyright -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="copyrights">© 2017 Sperbag. All Rights Reserved.</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+<!-- Footer / End -->
+
+
+<!-- Back To Top Button -->
+<div id="backtotop"><a href="#"></a></div>
+
+
+</div>
+<!-- Wrapper / End -->
+
+
+<!-- Scripts
+================================================== -->
+<script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="scripts/mmenu.min.js"></script>
+<script type="text/javascript" src="scripts/chosen.min.js"></script>
+<script type="text/javascript" src="scripts/slick.min.js"></script>
+<script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+<script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+<script type="text/javascript" src="scripts/waypoints.min.js"></script>
+<script type="text/javascript" src="scripts/counterup.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scripts/tooltips.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+
+
+
+
+
+</body>
+</html>

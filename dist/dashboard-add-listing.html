@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>Sperbag：行李重量分享平台</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+================================================== -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/colors/main.css" id="colors">
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<script>
+		var submit_weight = function () {
+			var username = sessionStorage.getItem('haveuser');
+
+			if ($('input[name="check"]:checked').length > 0) {
+				var way = $('input[name="check"]:checked').attr("id");
+				switch (way) {
+					case "check-a":
+						way = "direct";
+						break;
+					case "check-b":
+						way = "once";
+						break;
+					case "check-c":
+						way = "twice";
+						break;
+					default:
+						way = "none";
+						break;
+				}
+			}
+
+			// console.log(
+			// 	username,
+			// 	$("#select_weight :selected").text().substring(0, 1),
+			// 	$("#select_departure :selected").text(),
+			// 	$("#select_arrive :selected").text(),
+			// 	way,
+			// 	$("#flight_1").val(),
+			// 	$("#flight_2").val(),
+			// 	$("#flight_3").val(),
+			// 	$("#company").val(),
+			// 	$("#booking-date").val(),
+			// 	$("#meet_start_time :selected").text(),
+			// 	$("#meet_end_time :selected").text(),
+			// 	$("#meet_place :selected").text(),
+			// 	$("#money_type :selected").text(),
+			// 	$("#money").val()
+			// )
+
+			axios.post('/api/submit_weight', {
+					user: username,
+					weight: $("#select_weight :selected").text().substring(0, 1),
+					departure: $("#select_departure :selected").text(),
+					arrive: $("#select_arrive :selected").text(),
+					fly_way: way,
+					flight_1: $("#flight_1").val(),
+					flight_2: $("#flight_2").val(),
+					flight_3: $("#flight_3").val(),
+					company: $("#company").val(),
+					book_date: $("#booking-date").val(),
+					meet_start_time: $("#meet_start_time :selected").text(),
+					meet_end_time: $("#meet_end_time :selected").text(),
+					meet_place: $("#meet_place :selected").text(),
+					money_type: $("#money_type :selected").text(),
+					money: $("#money").val(),
+					remain_kg: $("#select_weight :selected").text().substring(0, 1)
+				})
+				.then(function (response) {
+					location.href = "dashboard-my-listings.html";
+				})
+				.catch(function (error) {
+					alert("Something Wrong!");
+				});
+
+		}
+
+		var replace_username = function (user) {
+			var myvar =
+				'<div class="user-name" id="changename"><span><img src="images/userphoto/person_3.jpg" alt=""></span>' +
+				user + '</div>';
+
+			$("#changename").replaceWith(myvar);
+		}
+
+		var get_green_num = function () {
+			var username = sessionStorage.getItem('haveuser');
+			axios.post('/api/get_weight', {
+					user: username
+				})
+				.then(function (response) {
+					console.log(response);
+					if (response.data !== undefined) {
+						if (response.data.length !== 0)
+							$("#green_num").append(response.data.length);
+					}
+				})
+				.catch(function (error) {
+					alert("Something Wrong!");
+				});
+		}
+
+		var logout = function () {
+			sessionStorage.removeItem('haveuser');
+			location.href = "index.html";
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header Container
+================================================== -->
+		<header id="header-container" class="fixed fullwidth dashboard">
+
+			<!-- Header -->
+			<div id="header" class="not-sticky">
+				<div class="container">
+
+					<!-- Left Side Content -->
+					<div class="left-side">
+
+						<!-- Logo -->
+						<div id="logo">
+							<a href="index.html">
+								<img src="images/logo.png" alt="">
+							</a>
+							<a href="index.html" class="dashboard-logo">
+								<img src="images/logo2.png" alt="">
+							</a>
+						</div>
+
+						<!-- Mobile Navigation -->
+						<div class="mmenu-trigger">
+							<button class="hamburger hamburger--collapse" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav id="navigation" class="style-1">
+							<ul id="responsive">
+								<li>
+									<a href="listings-list-full-width.html">尋找重量</a>
+
+								</li>
+								<li>
+									<a href="teach.html">提供重量</a>
+
+								</li>
+
+							</ul>
+						</nav>
+						<div class="clearfix"></div>
+						<!-- Main Navigation / End -->
+
+					</div>
+					<!-- Left Side Content / End -->
+
+					<!-- Right Side Content / End -->
+					<div class="right-side">
+						<!-- Header Widget -->
+						<div class="header-widget">
+
+							<!-- User Menu -->
+							<div class="user-menu">
+								<!--導入使用者大頭照及姓名-->
+								<div class="user-name" id="changename">
+									<span>
+										<img src="images/userphoto/person_3.jpg" alt="">
+									</span>
+								</div>
+								<ul>
+									<li>
+										<a href="dashboard.html">
+											<i class="sl sl-icon-settings"></i> 我的航程</a>
+									</li>
+									<li>
+										<a href="dashboard-messages.html">
+											<i class="sl sl-icon-bell"></i> 通知</a>
+									</li>
+									<li>
+										<a href="dashboard-bookings.html">
+											<i class="fa fa-calendar-check-o"></i> 預約託運</a>
+									</li>
+									<li>
+										<a href="dashboard-my-listings.html">
+											<i class="sl sl-icon-layers"></i> 我的重量</a>
+									</li>
+									<li>
+										<a onClick="logout()">
+											<i class="sl sl-icon-power"></i> 登出</a>
+									</li>
+								</ul>
+							</div>
+
+							<a href="dashboard-add-listing.html" class="button border with-icon">發布重量
+								<i class="sl sl-icon-plus"></i>
+							</a>
+						</div>
+						<!-- Header Widget / End -->
+					</div>
+					<!-- Right Side Content / End -->
+
+				</div>
+			</div>
+			<!-- Header / End -->
+
+		</header>
+		<div class="clearfix"></div>
+		<!-- Header Container / End -->
+
+
+		<!-- Dashboard -->
+		<div id="dashboard">
+
+			<!-- Navigation
+	================================================== -->
+
+			<!-- Responsive Navigation Trigger -->
+			<a href="#" class="dashboard-responsive-nav-trigger">
+				<i class="fa fa-reorder"></i> Dashboard Navigation</a>
+
+			<div class="dashboard-nav">
+				<div class="dashboard-nav-inner">
+
+					<ul data-submenu-title="">
+						<li>
+							<a href="dashboard.html">
+								<i class="sl sl-icon-settings"></i> 我的航程</a>
+						</li>
+					</ul>
+
+					<ul data-submenu-title="託運行李">
+
+						<!--<li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> 訊息 <span class="nav-tag messages">2</span></a></li>-->
+						<li>
+							<a href="dashboard-bookings.html">
+								<i class="fa fa-calendar-check-o"></i> 預約託運</a>
+						</li>
+						<li>
+							<a href="dashboard-reviews-look.html">
+								<i class="sl sl-icon-star"></i> 我的託運評價</a>
+						</li>
+					</ul>
+
+					<ul data-submenu-title="運送行李">
+						<li>
+							<a>
+								<i class="sl sl-icon-layers"></i> 我的重量</a>
+							<ul>
+								<li>
+									<a href="dashboard-my-listings.html">已發布
+										<!-- <span class="nav-tag green" id="green_num"></span> -->
+									</a>
+								</li>
+								<li>
+									<a href="#">待審核
+										<!-- <span class="nav-tag yellow">1</span> -->
+									</a>
+								</li>
+								<li>
+									<a href="#">已過期
+										<!-- <span class="nav-tag red">2</span> -->
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="dashboard-reviews-look1.html">
+								<i class="sl sl-icon-star"></i> 我的運送評價</a>
+						</li>
+						<li class="active">
+							<a href="dashboard-add-listing.html">
+								<i class="sl sl-icon-plus"></i> 發布重量</a>
+						</li>
+						<li>
+							<a href="dashboard-rule-listing.html">
+								<i class="sl sl-icon-shield"></i>編輯託運規則</a>
+						</li>
+					</ul>
+
+					<ul data-submenu-title="收藏">
+
+						<li>
+							<a href="dashboard-bookmarks.html">
+								<i class="sl sl-icon-heart"></i> 我的最愛</a>
+						</li>
+					</ul>
+
+					<ul data-submenu-title="帳戶管理">
+						<li>
+							<a href="dashboard-my-profile.html">
+								<i class="sl sl-icon-user"></i> 個人資料</a>
+						</li>
+						<li>
+							<a href="dashboard-pay-listings.html">
+								<i class="sl sl-icon-credit-card"></i> 付款設置</a>
+						</li>
+						<li>
+							<a onClick="logout()">
+								<i class="sl sl-icon-power"></i> 登出</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<!-- Navigation / End -->
+
+
+			<!-- Content
+	================================================== -->
+			<div class="dashboard-content">
+
+				<!-- Titlebar -->
+				<div id="titlebar">
+					<div class="row">
+						<div class="col-md-12">
+
+							<!-- Breadcrumbs -->
+							<nav id="breadcrumbs">
+								<ul>
+									<li>
+										<a href="#">首頁</a>
+									</li>
+									<li>
+										<a href="#">我的航程</a>
+									</li>
+									<li>發布重量</li>
+								</ul>
+							</nav>
+							<br>
+							<h2>發布重量</h2>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+
+						<div id="add-listing">
+
+							<!-- Section -->
+							<div class="add-listing-section margin-top-45">
+
+								<!-- Headline -->
+								<div class="add-listing-headline">
+									<h3 style="display: inline;">
+										<img src="images/kg.png" width="30px" height="30px"> 選擇重量</h3>
+
+								</div>
+
+								<div class="submit-section">
+
+									<!-- Row -->
+									<div class="row with-forms">
+										<!-- 重量選擇 -->
+										<div class="col-md-12">
+											<h5>託運重量
+												<i class="tip" data-tip-content="請選擇所要提供的行李重量"></i>
+											</h5>
+											<select class="chosen-select-no-single" id="select_weight">
+												<option label="選擇重量">選擇重量</option>
+												<option>1 kg</option>
+												<option>2 kg</option>
+												<option>3 kg</option>
+												<option>4 kg</option>
+												<option>5 kg</option>
+												<option>6 kg</option>
+												<option>7 kg</option>
+												<option>8 kg</option>
+												<option>9 kg</option>
+												<option>10 kg</option>
+												<option>11 kg</option>
+												<option>12 kg</option>
+												<option>13 kg</option>
+												<option>14 kg</option>
+												<option>15 kg</option>
+												<option>16 kg</option>
+												<option>17 kg</option>
+												<option>18 kg</option>
+												<option>19 kg</option>
+												<option>20 kg</option>
+												<option>21 kg</option>
+												<option>22 kg</option>
+												<option>23 kg</option>
+												<option>24 kg</option>
+												<option>25 kg</option>
+											</select>
+										</div>
+									</div>
+									<!-- Row / End -->
+
+								</div>
+							</div>
+							<!-- Section / End -->
+
+							<!-- Section -->
+							<div class="add-listing-section margin-top-45">
+
+								<!-- Headline -->
+								<div class="add-listing-headline">
+									<h3>
+										<i class="sl sl-icon-plane"></i>航班資訊</h3>
+
+								</div>
+
+								<div class="submit-section">
+
+									<!-- Row -->
+									<div class="row with-forms">
+
+
+										<!-- 出發地 -->
+										<div class="col-md-6">
+											<h5>出發地
+												<i class="tip" data-tip-content="選擇機場代碼或機場名稱"></i>
+											</h5>
+											<select class="chosen-select" id="select_departure">
+												<option label="選擇出發地">選擇出發地</option>
+												<option>台北-TPE</option>
+												<option>台北-TSA</option>
+												<option>東京成田-NRT</option>
+												<option>東京羽田-HND</option>
+												<option>香港-HKG</option>
+												<option>北京-PEK</option>
+												<option>上海浦東-PVG</option>
+												<option>首爾-ICN</option>
+												<option>曼谷-BKK</option>
+												<option>新加坡-SIN</option>
+												<option>舊金山-SFO</option>
+												<option>洛杉磯-LAX</option>
+												<option>紐約甘迺迪-JFK</option>
+												<option>多倫多-YYZ</option>
+												<option>溫哥華-YVR</option>
+												<option>倫敦希斯洛-LHR</option>
+												<option>巴黎戴高樂-CDG</option>
+												<option>法蘭克福-FPA</option>
+												<option>阿姆斯特丹-AMS</option>
+											</select>
+										</div>
+
+										<!-- 目的地 -->
+										<div class="col-md-6">
+											<h5>目的地
+												<i class="tip" data-tip-content="選擇機場代碼或機場名稱"></i>
+											</h5>
+											<select class="chosen-select" id="select_arrive">
+												<option label="選擇出發地">選擇出發地</option>
+												<option>台北-TPE</option>
+												<option>台北-TSA</option>
+												<option>東京成田-NRT</option>
+												<option>東京羽田-HND</option>
+												<option>香港-HKG</option>
+												<option>北京-PEK</option>
+												<option>上海浦東-PVG</option>
+												<option>首爾仁川-ICN</option>
+												<option>曼谷-BKK</option>
+												<option>新加坡-SIN</option>
+												<option>舊金山-SFO</option>
+												<option>洛杉磯-LAX</option>
+												<option>紐約甘迺迪-JFK</option>
+												<option>多倫多皮爾遜-YYZ</option>
+												<option>溫哥華-YVR</option>
+												<option>倫敦希斯洛-LHR</option>
+												<option>巴黎戴高樂-CDG</option>
+												<option>法蘭克福-FPA</option>
+												<option>阿姆斯特丹-AMS</option>
+											</select>
+										</div>
+
+										<!-- 轉機資訊 -->
+										<div class="col-md-12">
+											<h5 class="margin-top-30 margin-bottom-10">飛行方式
+												<span></span>
+											</h5>
+											<div class="checkboxes in-row margin-bottom-20">
+
+												<input id="check-a" type="checkbox" name="check">
+												<label for="check-a">直飛
+													<i class="tip" data-tip-content="請填寫航班編號1"></i>
+												</label>
+
+												<input id="check-b" type="checkbox" name="check">
+												<label for="check-b">轉機1次
+													<i class="tip" data-tip-content="請填寫航班編號1及2"></i>
+												</label>
+
+												<input id="check-c" type="checkbox" name="check">
+												<label for="check-c">轉機2次
+													<i class="tip" data-tip-content="請填寫航班編號1,2及3"></i>
+												</label>
+
+											</div>
+										</div>
+										<!-- Checkboxes / End -->
+
+										<!-- 航班編號 -->
+										<div class="col-md-12">
+											<h5>航班編號-1</h5>
+											<input type="text" placeholder="請填寫航班號碼 ex.CI005 " id="flight_1">
+										</div>
+
+										<!-- 航班編號2 -->
+										<div class="col-md-12">
+											<h5>航班編號-2</h5>
+											<input type="text" placeholder="請填寫航班號碼 ex.CI005 " id="flight_2">
+										</div>
+
+										<!-- 航班編號3 -->
+										<div class="col-md-12">
+											<h5>航班編號-3</h5>
+											<input type="text" placeholder="請填寫航班號碼 ex.CI005 " id="flight_3">
+										</div>
+
+										<!-- 航空公司 -->
+										<div class="col-md-12">
+											<h5>航空公司</h5>
+											<input type="text" placeholder="請填寫所搭乘的航空 " id="company">
+										</div>
+
+										<!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
+										<div class="col-md-12">
+											<h5>班機日期</h5>
+											<input type="text" style="text-align: left;" id="booking-date" data-lang="en" data-large-mode="true" data-large-default="true"
+											    data-min-year="2017" data-max-year="2020" data-disabled-days="08/17/2017,08/18/2017">
+										</div>
+
+
+
+									</div>
+									<!-- Row / End -->
+
+								</div>
+							</div>
+							<!-- Section / End -->
+							<br>
+
+
+
+							<!-- Section -->
+							<div class="add-listing-section">
+
+								<!-- Headline -->
+								<div class="add-listing-headline">
+									<h3>
+										<i class="sl sl-icon-people"></i>會面資訊</h3>
+									<label class="switch">
+										<input type="checkbox" checked>
+										<span class="slider round"></span>
+									</label>
+								</div>
+
+								<!-- Switcher ON-OFF Content -->
+								<div class="switcher-content">
+
+
+									<!-- 會面時間 -->
+									<div class="row with-forms">
+
+										<!-- 會面開始時間-->
+
+										<!-- Day -->
+
+
+										<div class="col-md-6">
+											<h5>會面開始時間</h5>
+											<select class="chosen-select" data-placeholder="開始時間" id="meet_start_time">
+												<option label="開始時間"></option>
+												<option>1:00 AM</option>
+												<option>1:30 AM</option>
+												<option>2:00 AM</option>
+												<option>2:30 AM</option>
+												<option>3:00 AM</option>
+												<option>3:30 AM</option>
+												<option>4:00 AM</option>
+												<option>4:30 AM</option>
+												<option>5:00 AM</option>
+												<option>5:30 AM</option>
+												<option>6:00 AM</option>
+												<option>6:30 AM</option>
+												<option>7:00 AM</option>
+												<option>7:30 AM</option>
+												<option>8:00 AM</option>
+												<option>8:30 AM</option>
+												<option>9:00 AM</option>
+												<option>9:30 AM</option>
+												<option>10:00 AM</option>
+												<option>10:30 AM</option>
+												<option>11:00 AM</option>
+												<option>11:30 AM</option>
+												<option>12:00 AM</option>
+												<option>12:30 AM</option>
+												<option>1:00 PM</option>
+												<option>1:30 PM</option>
+												<option>2:00 PM</option>
+												<option>2:30 PM</option>
+												<option>3:00 PM</option>
+												<option>3:30 PM</option>
+												<option>4:00 PM</option>
+												<option>4:30 PM</option>
+												<option>5:00 PM</option>
+												<option>5:30 PM</option>
+												<option>6:00 PM</option>
+												<option>6:30 PM</option>
+												<option>7:00 PM</option>
+												<option>7:30 PM</option>
+												<option>8:00 PM</option>
+												<option>8:30 PM</option>
+												<option>9:00 PM</option>
+												<option>9:30 PM</option>
+												<option>10:00 PM</option>
+												<option>10:30 PM</option>
+												<option>11:00 PM</option>
+												<option>11:30 PM</option>
+												<option>12:00 PM</option>
+												<option>12:30 PM</option>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<h5>會面結束時間</h5>
+											<select class="chosen-select" data-placeholder="結束時間" id="meet_end_time">
+												<option label="結束時間"></option>
+												<option>1:00 AM</option>
+												<option>1:30 AM</option>
+												<option>2:00 AM</option>
+												<option>2:30 AM</option>
+												<option>3:00 AM</option>
+												<option>3:30 AM</option>
+												<option>4:00 AM</option>
+												<option>4:30 AM</option>
+												<option>5:00 AM</option>
+												<option>5:30 AM</option>
+												<option>6:00 AM</option>
+												<option>6:30 AM</option>
+												<option>7:00 AM</option>
+												<option>7:30 AM</option>
+												<option>8:00 AM</option>
+												<option>8:30 AM</option>
+												<option>9:00 AM</option>
+												<option>9:30 AM</option>
+												<option>10:00 AM</option>
+												<option>10:30 AM</option>
+												<option>11:00 AM</option>
+												<option>11:30 AM</option>
+												<option>12:00 AM</option>
+												<option>12:30 AM</option>
+												<option>1:00 PM</option>
+												<option>1:30 PM</option>
+												<option>2:00 PM</option>
+												<option>2:30 PM</option>
+												<option>3:00 PM</option>
+												<option>3:30 PM</option>
+												<option>4:00 PM</option>
+												<option>4:30 PM</option>
+												<option>5:00 PM</option>
+												<option>5:30 PM</option>
+												<option>6:00 PM</option>
+												<option>6:30 PM</option>
+												<option>7:00 PM</option>
+												<option>7:30 PM</option>
+												<option>8:00 PM</option>
+												<option>8:30 PM</option>
+												<option>9:00 PM</option>
+												<option>9:30 PM</option>
+												<option>10:00 PM</option>
+												<option>10:30 PM</option>
+												<option>11:00 PM</option>
+												<option>11:30 PM</option>
+												<option>12:00 PM</option>
+												<option>12:30 PM</option>
+											</select>
+										</div>
+
+										<!-- 會面地點 -->
+										<div class="col-md-12">
+											<h5>會面地點
+												<i class="tip" data-tip-content="選擇適合的sparstation與買家進行安置行李"></i>
+											</h5>
+											<select class="chosen-select" id="meet_place">
+												<option label="選擇適合的會面地點">選擇適合的會面地點</option>
+												<option>台北-TPE：第一航廈站 SparStation</option>
+												<option>台北-TPE：第二航廈站 SparStation</option>
+												<option>台北-TSA：第一航廈站 SparStation</option>
+												<option>東京成田-NRT：第一航廈站 SparStation</option>
+												<option>東京成田-NRT：第二航廈站 SparStation</option>
+												<option>東京成田-NRT：第三航廈站 SparStation</option>
+												<option>東京羽田-HND：第一航廈站 SparStation</option>
+												<option>東京羽田-HND：第二航廈站 SparStation</option>
+												<option>香港-HKG：第一航廈站 SparStation</option>
+												<option>香港-HKG：第二航廈站 SparStation</option>
+												<option>北京-PEK：第一航廈站 SparStation</option>
+												<option>北京-PEK：第二航廈站 SparStation</option>
+												<option>上海浦東-PVG：第一航廈站 SparStation</option>
+												<option>上海浦東-PVG：第二航廈站 SparStation</option>
+												<option>首爾仁川-ICN：第一航廈站 SparStation</option>
+												<option>首爾仁川-ICN：第二航廈站 SparStation</option>
+												<option>曼谷-BKK：第一航廈站 SparStation</option>
+												<option>新加坡-SIN：第一航廈站 SparStation</option>
+												<option>新加坡-SIN：第二航廈站 SparStation</option>
+												<option>新加坡-SIN：第三航廈站 SparStation</option>
+												<option>舊金山-SFO：國際航廈站 SparStation</option>
+												<option>洛杉磯-LAX：出境大廳站 SparStation</option>
+												<option>紐約甘迺迪-JFK：出境大廳站 SparStation</option>
+												<option>多倫多皮爾遜-YYZ：第三航空大樓站 SparStation</option>
+												<option>溫哥華-YVR：國際航站樓站 SparStation</option>
+												<option>倫敦希斯洛-LHR：第二航廈2A站 SparStation</option>
+												<option>倫敦希斯洛-LHR：第五航廈5A站 SparStation</option>
+												<option>巴黎戴高樂-CDG：第一航廈站 SparStation</option>
+												<option>巴黎戴高樂-CDG：第二航廈站 SparStation</option>
+												<option>巴黎戴高樂-CDG：第三航廈站 SparStation</option>
+												<option>法蘭克福-FPA：第一航廈站 SparStation</option>
+												<option>法蘭克福-FPA：第二航廈站 SparStation</option>
+												<option>阿姆斯特丹-AMS：出境大廳站 SparStation</option>
+											</select>
+										</div>
+
+										<!-- Day / End -->
+
+									</div>
+									<!-- Row / End -->
+
+
+								</div>
+
+								<!-- Switcher ON-OFF Content -->
+
+
+							</div>
+							<!-- Section / End -->
+
+							<!-- Section -->
+							<div class="add-listing-section margin-top-45">
+
+								<!-- Headline -->
+								<div class="add-listing-headline">
+									<h3>
+										<i class="im im-icon-Money-Bag"></i>價格資訊</h3>
+								</div>
+
+								<div class="submit-section">
+
+									<!-- Row -->
+									<div class="row with-forms">
+
+										<!-- 幣別 -->
+										<div class="col-md-12">
+											<h5>幣別</h5>
+											<select class="chosen-select-no-single" id="money_type">
+												<option label="請選擇幣別">請選擇幣別</option>
+												<option>新台幣</option>
+												<option>美元</option>
+												<option>日圓</option>
+												<option>人民幣</option>
+												<option>歐元</option>
+												<option>英鎊</option>
+												<option>韓圜</option>
+												<option>港幣</option>
+												<option>泰銖</option>
+											</select>
+										</div>
+
+										<!-- 定價 -->
+
+										<div class="col-md-12">
+
+											<h5>定價
+												<i class="tip" data-tip-content="銷售價格以每公斤計算"></i>
+												<span> (請輸入每公斤價格) </span>
+											</h5>
+											<input class="fm-input pricing-price" type="text" value="" placeholder="請輸入銷售價格" data-unit="USD" id="money" />
+
+										</div>
+
+									</div>
+									<!-- Row / End -->
+
+								</div>
+							</div>
+							<!-- Section / End -->
+
+
+
+
+
+							<a class="button preview" onClick="submit_weight()">發布重量
+								<i class="fa fa-arrow-circle-right"></i>
+							</a>
+
+						</div>
+					</div>
+
+					<!-- Copyrights -->
+					<div class="col-md-12">
+						<div class="copyrights">© 2017 Sparbag. All Rights Reserved.</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- Content / End -->
+
+
+		</div>
+		<!-- Dashboard / End -->
+
+
+	</div>
+	<!-- Wrapper / End -->
+
+
+	<!-- Scripts
+================================================== -->
+	<script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="scripts/mmenu.min.js"></script>
+	<script type="text/javascript" src="scripts/chosen.min.js"></script>
+	<script type="text/javascript" src="scripts/slick.min.js"></script>
+	<script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+	<script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+	<script type="text/javascript" src="scripts/waypoints.min.js"></script>
+	<script type="text/javascript" src="scripts/counterup.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="scripts/tooltips.min.js"></script>
+	<script type="text/javascript" src="scripts/custom.js"></script>
+
+	<script>
+		var username = sessionStorage.getItem('haveuser');
+		console.log("Current User: " + username);
+		if (username !== null) {
+			replace_username(username);
+			// get_green_num();
+		}else{
+			alert("You have to login!");
+			window.history.back();
+		}
+	</script>
+
+	<!-- Maps -->
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+	<script type="text/javascript" src="scripts/infobox.min.js"></script>
+	<script type="text/javascript" src="scripts/markerclusterer.js"></script>
+	<script type="text/javascript" src="scripts/maps.js"></script>
+
+
+	<script>
+		$('input[type="checkbox"]').on('change', function () {
+			$('input[type="checkbox"]').not(this).prop('checked', false);
+		});
+	</script>
+
+	<!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
+	<link href="css/plugins/datedropper.css" rel="stylesheet" type="text/css">
+	<script src="scripts/datedropper.js"></script>
+	<script>
+		$('#booking-date').dateDropper();
+	</script>
+
+	<!-- Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker -->
+	<script src="scripts/timedropper.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/plugins/timedropper.css">
+	<script>
+		this.$('#booking-time').timeDropper({
+			setCurrentTime: false,
+			meridians: true,
+			primaryColor: "#7ccad3",
+			borderColor: "#7ccad3",
+			minutesInterval: '15'
+		});
+
+		var $clocks = $('.td-input');
+		_.each($clocks, function (clock) {
+			clock.value = null;
+		});
+	</script>
+
+	<!-- Booking Widget - Quantity Buttons -->
+	<script src="scripts/quantityButtons.js"></script>
+
+
+
+	<!-- Style Switcher
+================================================== -->
+	<script src="scripts/switcher.js"></script>
+
+
+	<!-- Style Switcher / End -->
+
+
+	<!-- Opening hours added via JS (this is only for demo purpose) -->
+	<script>
+		$(".opening-day.js-demo-hours .chosen-select").each(function () {
+			$(this).append('' +
+				'<option></option>' +
+				'<option>Closed</option>' +
+				'<option>1 AM</option>' +
+				'<option>2 AM</option>' +
+				'<option>3 AM</option>' +
+				'<option>4 AM</option>' +
+				'<option>5 AM</option>' +
+				'<option>6 AM</option>' +
+				'<option>7 AM</option>' +
+				'<option>8 AM</option>' +
+				'<option>9 AM</option>' +
+				'<option>10 AM</option>' +
+				'<option>11 AM</option>' +
+				'<option>12 AM</option>' +
+				'<option>1 PM</option>' +
+				'<option>2 PM</option>' +
+				'<option>3 PM</option>' +
+				'<option>4 PM</option>' +
+				'<option>5 PM</option>' +
+				'<option>6 PM</option>' +
+				'<option>7 PM</option>' +
+				'<option>8 PM</option>' +
+				'<option>9 PM</option>' +
+				'<option>10 PM</option>' +
+				'<option>11 PM</option>' +
+				'<option>12 PM</option>');
+		});
+	</script>
+
+	<!-- DropZone | Documentation: http://dropzonejs.com -->
+	<script type="text/javascript" src="scripts/dropzone.js"></script>
+
+</body>
+
+</html>

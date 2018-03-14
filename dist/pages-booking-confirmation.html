@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>Sperbag：行李重量分享平台</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+================================================== -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/colors/main.css" id="colors">
+
+	<script>
+		var replace_username = function (user) {
+			var myvar =
+				'<div class="user-name" id="changename"><span><img src="images/userphoto/person_3.jpg" alt=""></span>' +
+				user + '</div>';
+
+			$("#changename").replaceWith(myvar);
+		}
+
+		var logout = function () {
+			sessionStorage.removeItem('haveuser');
+			location.href = "index.html";
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header Container
+================================================== -->
+		<header id="header-container">
+
+			<!-- Header -->
+			<div id="header">
+				<div class="container">
+
+					<!-- Left Side Content -->
+					<div class="left-side">
+
+						<!-- Logo -->
+						<div id="logo">
+							<a href="index.html">
+								<img src="images/logo.png" alt="">
+							</a>
+						</div>
+
+						<!-- Mobile Navigation -->
+						<div class="mmenu-trigger">
+							<button class="hamburger hamburger--collapse" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav id="navigation" class="style-1">
+							<ul id="responsive">
+								<li>
+									<a href="listings-list-full-width.html">尋找重量</a>
+
+								</li>
+								<li>
+									<a href="teach.html">提供重量</a>
+
+								</li>
+
+							</ul>
+						</nav>
+						<div class="clearfix"></div>
+						<!-- Main Navigation / End -->
+
+					</div>
+					<!-- Left Side Content / End -->
+
+					<!-- Right Side Content / End -->
+					<div class="right-side">
+						<!-- Header Widget -->
+						<div class="header-widget">
+
+							<!-- User Menu -->
+							<div class="user-menu">
+								<div class="user-name" id="changename">
+									<span>
+										<img src="images/dashboard-avatar.jpg" alt="">
+									</span>My Account</div>
+								<ul>
+									<li>
+										<a href="dashboard.html">
+											<i class="sl sl-icon-settings"></i> 我的航程</a>
+									</li>
+									<li>
+										<a href="dashboard-messages.html">
+											<i class="sl sl-icon-bell"></i> 通知</a>
+									</li>
+									<li>
+										<a href="dashboard-messages.html">
+											<i class="sl sl-icon-envelope-open"></i> 訊息</a>
+									</li>
+									<li>
+										<a href="dashboard-bookings.html">
+											<i class="fa fa-calendar-check-o"></i> 預約託運</a>
+									</li>
+									<li>
+										<a onClick="logout()">
+											<i class="sl sl-icon-power"></i> 登出</a>
+									</li>
+								</ul>
+							</div>
+
+							<a href="dashboard-add-listing.html" class="button border with-icon">發布重量
+								<i class="sl sl-icon-plus"></i>
+							</a>
+						</div>
+						<!-- Header Widget / End -->
+					</div>
+					<!-- Right Side Content / End -->
+
+
+
+				</div>
+			</div>
+			<!-- Header / End -->
+
+		</header>
+		<div class="clearfix"></div>
+		<!-- Header Container / End -->
+
+
+		<!-- Titlebar
+================================================== -->
+		<div id="titlebar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+
+						<h2>預約確認</h2>
+
+						<!-- Breadcrumbs -->
+						<nav id="breadcrumbs">
+							<ul>
+								<li>
+									<a href="#">首頁</a>
+								</li>
+								<li>預約確認</li>
+							</ul>
+						</nav>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Content
+================================================== -->
+
+		<!-- Container -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="booking-confirmation-page">
+						<i class="fa fa-check-circle"></i>
+						<h2 class="margin-top-30">感謝您的預約！</h2>
+						<p>你將透過 Sparbag2017@gmail.com 收到確認信件</p>
+						<p></p>
+						<a href="dashboard-bookings.html" class="button margin-top-30">前往預約清單</a>
+						<br>
+						<a href="dashboard-invoice.html" class="button margin-top-30">查看發票</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- Container / End -->
+
+
+
+		<!-- Footer
+================================================== -->
+		<div id="footer" class="sticky-footer">
+			<!-- Main -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<img class="footer-logo" src="images/logo.png" alt="">
+						<br>
+						<br>
+						<p>SPARBAG是一套更聰明、更便利的行李重量分享平台。藉由社群形成共享生態圈，利用同一航班去程與回程旅客行李重量落差，將重量的主導權還給每一為旅客，SPARBAG全力打造更具安全與信譽的共享未來，帶領旅人以 「分享」建構未來的旅遊新世界。
+						</p>
+
+					</div>
+
+					<div class="col-md-3 col-sm-6 ">
+						<h4>探索</h4>
+						<ul class="footer-links">
+							<li>
+								<a href="pages-blog.html">旅遊誌</a>
+							</li>
+							<li>
+								<a href="#">託運行李</a>
+							</li>
+							<li>
+								<a href="#">運送行李</a>
+							</li>
+							<li>
+								<a href="#">信任與安全</a>
+							</li>
+							<li>
+								<a href="#">運送義務</a>
+							</li>
+							<li>
+								<a href="#">SparStation</a>
+							</li>
+						</ul>
+						<ul class="footer-links">
+							<li>
+								<a href="#">常見問題</a>
+							</li>
+							<li>
+								<a href="#">部落格</a>
+							</li>
+							<li>
+								<a href="#">關於我們</a>
+							</li>
+							<li>
+								<a href="#">如何運作</a>
+							</li>
+							<li>
+								<a href="pages-contact.html">聯絡我們</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+
+					<div class="col-md-3  col-sm-10">
+						<h4>聯絡我們</h4>
+						<div class="text-widget">
+							<span>51591 彰化縣大村鄉學府路168號</span>
+							<br> 聯絡電話:
+							<span>(0917) 680-220 </span>
+							<br> 聯絡電話:
+							<span>(0903) 501-689 </span>
+							<br> E-Mail:
+							<span>
+								<a href="#">sparbag2017@gmail.com</a>
+							</span>
+							<br>
+						</div>
+
+						<ul class="social-icons margin-top-10">
+							<li>
+								<a class="facebook" href="#">
+									<i class="icon-facebook"></i>
+								</a>
+							</li>
+							<li>
+								<a class="instagram" href="#">
+									<i class="icon-instagram"></i>
+								</a>
+							</li>
+							<li>
+								<a class="youtube" href="#">
+									<i class="icon-youtube"></i>
+								</a>
+							</li>
+							<!--
+					<li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
+					<li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li>-->
+						</ul>
+
+					</div>
+					<div class="col-md-2 col-sm-6 ">
+						<h4></h4>
+						<br>
+						<div class="col-md-14">
+							<select class="chosen-select">
+								<option label="blank">繁體中文</option>
+								<option>簡體中文</option>
+								<option>日本語</option>
+								<option>한국어</option>
+								<option>English-US</option>
+								<option>English-UK</option>
+								<option>Français</option>
+								<option>Deutsch</option>
+								<option>ไทย</option>
+								<option>Nederlands</option>
+							</select>
+						</div>
+						<br>
+						<div class="col-md-14">
+							<select class="chosen-select">
+								<option label="blank">新台幣</option>
+								<option>美元</option>
+								<option>日元</option>
+								<option>人民幣</option>
+								<option>歐元</option>
+								<option>英鎊</option>
+								<option>韓圜</option>
+								<option>港幣</option>
+							</select>
+						</div>
+						<br>
+						<div class="clearfix"></div>
+					</div>
+
+
+
+				</div>
+
+				<!-- Copyright -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="copyrights">© 2017 Sperbag. All Rights Reserved.</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- Footer / End -->
+
+
+		<!-- Back To Top Button -->
+		<div id="backtotop">
+			<a href="#"></a>
+		</div>
+
+
+	</div>
+	<!-- Wrapper / End -->
+
+
+
+	<!-- Scripts
+================================================== -->
+	<script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="scripts/mmenu.min.js"></script>
+	<script type="text/javascript" src="scripts/chosen.min.js"></script>
+	<script type="text/javascript" src="scripts/slick.min.js"></script>
+	<script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+	<script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+	<script type="text/javascript" src="scripts/waypoints.min.js"></script>
+	<script type="text/javascript" src="scripts/counterup.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="scripts/tooltips.min.js"></script>
+	<script type="text/javascript" src="scripts/custom.js"></script>
+
+	<script>
+		var username = sessionStorage.getItem('haveuser');
+		console.log("Current User: " + username);
+		if (username !== null)
+			replace_username(username);
+	</script>
+
+	<!-- Style Switcher
+================================================== -->
+	<script src="scripts/switcher.js"></script>
+
+	<!-- <div id="style-switcher">
+		<h2>Color Switcher
+			<a href="#">
+				<i class="sl sl-icon-settings"></i>
+			</a>
+		</h2>
+
+		<div>
+			<ul class="colors" id="color1">
+				<li>
+					<a href="#" class="main" title="Main"></a>
+				</li>
+				<li>
+					<a href="#" class="blue" title="Blue"></a>
+				</li>
+				<li>
+					<a href="#" class="green" title="Green"></a>
+				</li>
+				<li>
+					<a href="#" class="orange" title="Orange"></a>
+				</li>
+				<li>
+					<a href="#" class="navy" title="Navy"></a>
+				</li>
+				<li>
+					<a href="#" class="yellow" title="Yellow"></a>
+				</li>
+				<li>
+					<a href="#" class="peach" title="Peach"></a>
+				</li>
+				<li>
+					<a href="#" class="beige" title="Beige"></a>
+				</li>
+				<li>
+					<a href="#" class="purple" title="Purple"></a>
+				</li>
+				<li>
+					<a href="#" class="celadon" title="Celadon"></a>
+				</li>
+				<li>
+					<a href="#" class="red" title="Red"></a>
+				</li>
+				<li>
+					<a href="#" class="brown" title="Brown"></a>
+				</li>
+				<li>
+					<a href="#" class="cherry" title="Cherry"></a>
+				</li>
+				<li>
+					<a href="#" class="cyan" title="Cyan"></a>
+				</li>
+				<li>
+					<a href="#" class="gray" title="Gray"></a>
+				</li>
+				<li>
+					<a href="#" class="olive" title="Olive"></a>
+				</li>
+			</ul>
+		</div>
+
+	</div> -->
+	<!-- Style Switcher / End -->
+
+
+</body>
+
+</html>

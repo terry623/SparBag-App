@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>Sperbag：行李重量分享平台</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+================================================== -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/colors/main.css" id="colors">
+
+</head>
+<script>
+	var replace_username = function (user) {
+		var myvar =
+			'<div class="user-name" id="changename"><span><img src="images/userphoto/person_3.jpg" alt=""></span>' +
+			user + '</div>';
+
+		$("#changename").replaceWith(myvar);
+	}
+
+	var logout = function () {
+		sessionStorage.removeItem('haveuser');
+		location.href = "index.html";
+	}
+</script>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header Container
+================================================== -->
+		<header id="header-container" class="fixed fullwidth dashboard">
+
+			<!-- Header -->
+			<div id="header" class="not-sticky">
+				<div class="container">
+
+					<!-- Left Side Content -->
+					<div class="left-side">
+
+						<!-- Logo -->
+						<div id="logo">
+							<a href="index.html">
+								<img src="images/logo.png" alt="">
+							</a>
+							<a href="index.html" class="dashboard-logo">
+								<img src="images/logo2.png" alt="">
+							</a>
+						</div>
+
+						<!-- Mobile Navigation -->
+						<div class="mmenu-trigger">
+							<button class="hamburger hamburger--collapse" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav id="navigation" class="style-1">
+							<ul id="responsive">
+								<li>
+									<a href="listings-list-full-width.html">尋找重量</a>
+
+								</li>
+								<li>
+									<a href="teach.html">提供重量</a>
+
+								</li>
+
+
+								<!--
+
+
+						<li><a href="#">Home</a>
+							<ul>
+								<li><a href="index.html">Home 1</a></li>
+								<li><a href="index-2.html">Home 2</a></li>
+								<li><a href="index-3.html">Home 3</a></li>
+								<li><a href="index-4.html">Home 4</a></li>
+							</ul>
+						</li>
+
+						<li><a href="#">Listings</a>
+							<ul>
+								<li><a href="#">List Layout</a>
+									<ul>
+										<li><a href="listings-list-with-sidebar.html">With Sidebar</a></li>
+										<li><a href="listings-list-full-width.html">Full Width</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Grid Layout</a>
+									<ul>
+										<li><a href="listings-grid-with-sidebar-1.html">With Sidebar 1</a></li>
+										<li><a href="listings-grid-with-sidebar-2.html">With Sidebar 2</a></li>
+										<li><a href="listings-grid-full-width.html">Full Width</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Half Screen Map</a>
+									<ul>
+										<li><a href="listings-half-screen-map-list.html">List Layout</a></li>
+										<li><a href="listings-half-screen-map-grid-1.html">Grid Layout 1</a></li>
+										<li><a href="listings-half-screen-map-grid-2.html">Grid Layout 2</a></li>
+									</ul>
+								</li>
+								<li><a href="listings-single-page.html">Single Listing</a></li>
+							</ul>
+						</li>
+
+						<li><a class="current" href="#">User Panel</a>
+							<ul>
+								<li><a href="dashboard.html">Dashboard</a></li>
+								<li><a href="dashboard-messages.html">Messages</a></li>
+								<li><a href="dashboard-bookings.html">Bookings</a></li>
+								<li><a href="dashboard-my-listings.html">My Listings</a></li>
+								<li><a href="dashboard-reviews.html">Reviews</a></li>
+								<li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
+								<li><a href="dashboard-add-listing.html">Add Listing</a></li>
+								<li><a href="dashboard-my-profile.html">My Profile</a></li>
+								<li><a href="dashboard-invoice.html">Invoice</a></li>
+							</ul>
+						</li>
+
+						<li><a href="#">Pages</a>
+							<ul>
+								<li><a href="pages-user-profile.html">User Profile</a></li>
+								<li><a href="pages-booking.html">Booking Page</a></li>
+								<li><a href="pages-blog.html">Blog</a>
+									<ul>
+										<li><a href="pages-blog.html">Blog</a></li>
+										<li><a href="pages-blog-post.html">Blog Post</a></li>
+									</ul>
+								</li>
+								<li><a href="pages-contact.html">Contact</a></li>
+								<li><a href="pages-coming-soon.html">Coming Soon</a></li>
+								<li><a href="pages-elements.html">Elements</a></li>
+								<li><a href="pages-pricing-tables.html">Pricing Tables</a></li>
+								<li><a href="pages-typography.html">Typography</a></li>
+								<li><a href="pages-404.html">404 Page</a></li>
+								<li><a href="pages-icons.html">Icons</a></li>
+							</ul>
+						</li>-->
+
+							</ul>
+						</nav>
+						<div class="clearfix"></div>
+						<!-- Main Navigation / End -->
+
+					</div>
+					<!-- Left Side Content / End -->
+
+					<!-- Right Side Content / End -->
+					<div class="right-side">
+						<!-- Header Widget -->
+						<div class="header-widget">
+
+							<!-- User Menu -->
+							<div class="user-menu">
+								<!--導入使用者大頭照及姓名-->
+								<div class="user-name" id="changename">
+									<span>
+										<img src="images/userphoto/person_3.jpg" alt="">
+									</span>
+								</div>
+								<ul>
+									<li>
+										<a href="dashboard.html">
+											<i class="sl sl-icon-settings"></i> 我的航程</a>
+									</li>
+									<li>
+										<a href="dashboard-messages.html">
+											<i class="sl sl-icon-bell"></i> 通知</a>
+									</li>
+									<li>
+										<a href="dashboard-bookings.html">
+											<i class="fa fa-calendar-check-o"></i> 預約託運</a>
+									</li>
+									<li>
+										<a href="dashboard-my-listings.html">
+											<i class="sl sl-icon-layers"></i> 我的重量</a>
+									</li>
+									<li>
+										<a onClick="logout()">
+											<i class="sl sl-icon-power"></i> 登出</a>
+									</li>
+								</ul>
+							</div>
+
+							<a href="dashboard-add-listing.html" class="button border with-icon">發布重量
+								<i class="sl sl-icon-plus"></i>
+							</a>
+						</div>
+						<!-- Header Widget / End -->
+					</div>
+					<!-- Right Side Content / End -->
+
+				</div>
+			</div>
+			<!-- Header / End -->
+
+		</header>
+		<div class="clearfix"></div>
+		<!-- Header Container / End -->
+
+
+		<!-- Dashboard -->
+		<div id="dashboard">
+
+			<!-- Navigation
+	================================================== -->
+
+			<!-- Responsive Navigation Trigger
+	<a href="#" class="dashboard-responsive-nav-trigger"><i class="fa fa-reorder"></i> Dashboard Navigation</a>
+	
+	<div class="dashboard-nav">
+		<div class="dashboard-nav-inner">
+
+			<ul data-submenu-title="Main">
+				<li><a href="dashboard.html"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
+				<li class="active"><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> Messages <span class="nav-tag messages">2</span></a></li>
+				<li><a href="dashboard-bookings.html"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
+			</ul>
+			
+			<ul data-submenu-title="Listings">
+				<li><a><i class="sl sl-icon-layers"></i> My Listings</a>
+					<ul>
+						<li><a href="dashboard-my-listings.html">Active <span class="nav-tag green">6</span></a></li>
+						<li><a href="dashboard-my-listings.html">Pending <span class="nav-tag yellow">1</span></a></li>
+						<li><a href="dashboard-my-listings.html">Expired <span class="nav-tag red">2</span></a></li>
+					</ul>	
+				</li>
+				<li><a href="dashboard-reviews.html"><i class="sl sl-icon-star"></i> Reviews</a></li>
+				<li><a href="dashboard-bookmarks.html"><i class="sl sl-icon-heart"></i> Bookmarks</a></li>
+				<li><a href="dashboard-add-listing.html"><i class="sl sl-icon-plus"></i> Add Listing</a></li>
+			</ul>	
+
+			<ul data-submenu-title="Account">
+				<li><a href="dashboard-my-profile.html"><i class="sl sl-icon-user"></i> My Profile</a></li>
+				<li><a href="index.html"><i class="sl sl-icon-power"></i> Logout</a></li>
+			</ul>
+
+	</div>
+	</div> -->
+			<!-- Navigation / End -->
+
+
+			<!-- Content
+	================================================== -->
+			<div class="col-md-12">
+
+				<!-- Titlebar -->
+				<br>
+				<div id="titlebar">
+					<div class="row">
+						<div class="col-md-8">
+							<h2>&nbsp;&nbsp;通知</h2>
+							<!-- Breadcrumbs -->
+							<nav id="breadcrumbs">
+								<ul>
+									<li>
+										<a href="#">首頁</a>
+									</li>
+									<li>通知&nbsp;</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<!-- Listings -->
+					<div class="col-lg-8 col-md-8">
+
+						<div class="messages-container margin-top-0">
+							<div class="messages-headline">
+								<h4>最新通知</h4>
+							</div>
+
+							<div class="messages-inbox">
+
+								<ul>
+									<li class="unread">
+										<a href="">
+											<div class="message-avatar">
+												<img src="images/logo5.png" alt="" />
+											</div>
+
+											<div class="message-by">
+												<div class="message-by-headline">
+													<h5>賺取10公斤旅行重量 >_
+														< <i>NEW</i>
+													</h5>
+													<span>2 hours ago</span>
+												</div>
+												<p>邀請好友加入Sparbag，您就能獲得高達10公斤的旅行重量。</p>
+											</div>
+										</a>
+									</li>
+
+									<li class="unread">
+										<a href="">
+											<div class="message-avatar">
+												<img src="images/logo5.png" alt="" />
+											</div>
+
+											<div class="message-by">
+												<div class="message-by-headline">
+													<h5>體驗全新Sparbag app ~
+														<i>NEW</i>
+													</h5>
+													<span>2018.02.16</span>
+												</div>
+												<p>立即下載sparbag APP 輕鬆託運沒煩惱。</p>
+											</div>
+										</a>
+									</li>
+
+
+									<li>
+										<a href="">
+											<div class="message-avatar">
+												<img src="images/logo5.png" alt="" />
+											</div>
+
+											<div class="message-by">
+												<div class="message-by-headline">
+													<h5>免費獲得5公斤旅行重量！</h5>
+													<span>2018.02.15</span>
+												</div>
+												<p>發布您多餘的重量，獲得5公斤旅行重量。立即發布您多餘的重量，即可在完成第一趟行李運送後獲得5公斤旅行重量。</p>
+											</div>
+										</a>
+									</li>
+
+									<li>
+										<a href="">
+											<div class="message-avatar">
+												<img src="images/logo5.png" alt="" />
+											</div>
+
+											<div class="message-by">
+												<div class="message-by-headline">
+													<h5>歡迎使用Sparbag！</h5>
+													<span>2018.01.22</span>
+												</div>
+												<p>歡迎來到Sparbag。準備好跟我們一同旅行了嗎？ 發布或預約重量，開始你的旅程吧！</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+
+						<!-- Pagination -->
+						<div class="clearfix"></div>
+						<div class="pagination-container margin-top-30 margin-bottom-0">
+							<nav class="pagination">
+								<ul>
+									<li>
+										<a href="#" class="current-page">1</a>
+									</li>
+									<li>
+										<a href="#">2</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="sl sl-icon-arrow-right"></i>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<!-- Pagination / End -->
+
+					</div>
+
+					<!-- Widgets -->
+					<div class="col-lg-3 col-md-4">
+						<div class="sidebar right">
+
+							<!-- Widget -->
+							<div class="widget">
+								<h3 class="margin-top-0 margin-bottom-25">搜尋通知</h3>
+								<div class="search-blog-input">
+									<div class="input">
+										<input class="search-field" type="text" placeholder="Type and hit enter" value="" />
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<!-- Widget / End -->
+
+
+							<!-- Widget -->
+							<div class="widget margin-top-40">
+								<h3>Got any questions?</h3>
+								<div class="info-box margin-bottom-10">
+									<p>有任何問題嗎？ 快速諮詢不用等！</p>
+									<a href="pages-contact.html" class="button fullwidth margin-top-20">
+										<i class="fa fa-envelope-o"></i>聯絡我們</a>
+								</div>
+							</div>
+							<!-- Widget / End -->
+
+							<!-- Widget -->
+							<div class="widget margin-top-40">
+								<h3 class="margin-bottom-25">Social</h3>
+								<ul class="social-icons rounded">
+									<li>
+										<a class="facebook" href="#">
+											<i class="icon-facebook"></i>
+										</a>
+									</li>
+									<li>
+										<a class="instagram" href="#">
+											<i class="icon-instagram"></i>
+										</a>
+									</li>
+									<li>
+										<a class="youtube" href="#">
+											<i class="icon-youtube"></i>
+										</a>
+									</li>
+
+								</ul>
+
+							</div>
+							<!-- Widget / End-->
+
+							<div class="clearfix"></div>
+							<div class="margin-bottom-40"></div>
+						</div>
+					</div>
+				</div>
+				<!-- Sidebar / End -->
+
+				<!-- Copyrights -->
+				<div class="col-md-12">
+					<div class="copyrights">© 2017 Sparbag. All Rights Reserved.</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- Content / End -->
+
+
+	</div>
+	<!-- Dashboard / End -->
+
+
+	</div>
+	<!-- Wrapper / End -->
+
+
+	<!-- Scripts
+================================================== -->
+	<script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="scripts/mmenu.min.js"></script>
+	<script type="text/javascript" src="scripts/chosen.min.js"></script>
+	<script type="text/javascript" src="scripts/slick.min.js"></script>
+	<script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+	<script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+	<script type="text/javascript" src="scripts/waypoints.min.js"></script>
+	<script type="text/javascript" src="scripts/counterup.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="scripts/tooltips.min.js"></script>
+	<script type="text/javascript" src="scripts/custom.js"></script>
+	<script>
+		var username = sessionStorage.getItem('haveuser');
+		console.log("Current User: " + username);
+		if (username !== null) {
+			replace_username(username);
+			// get_green_num();
+		}
+	</script>
+
+
+</body>
+
+</html>

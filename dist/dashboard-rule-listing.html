@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>Sperbag：行李重量分享平台</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+================================================== -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/colors/main.css" id="colors">
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<script>
+		var store_article = function () {
+			var username = sessionStorage.getItem('haveuser');
+			axios.post('/api/store_article', {
+					about_me: $("#notes_self").val(),
+					check_item: $("#select_check_item :selected").text(),
+					rule_1: $("#notes").val(),
+					rule_2: $("#notes2").val(),
+					username: username
+				})
+				.then(function (response) {
+					console.log(response);
+					location.reload();
+				})
+				.catch(function (error) {
+					alert("Something Wrong!");
+				});
+		}
+
+		var replace_username = function (user) {
+			var myvar =
+				'<div class="user-name" id="changename"><span><img src="images/userphoto/person_3.jpg" alt=""></span>' +
+				user + '</div>';
+
+			$("#changename").replaceWith(myvar);
+		}
+
+		var get_green_num = function () {
+			var username = sessionStorage.getItem('haveuser');
+			axios.post('/api/get_weight', {
+					user: username
+				})
+				.then(function (response) {
+					console.log(response);
+					if (response.data !== undefined) {
+						if (response.data.length !== 0)
+							$("#green_num").append(response.data.length);
+					}
+				})
+				.catch(function (error) {
+					alert("Something Wrong!");
+				});
+		}
+
+		var logout = function () {
+			sessionStorage.removeItem('haveuser');
+			location.href = "index.html";
+		}
+	</script>
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header Container
+================================================== -->
+		<header id="header-container" class="fixed fullwidth dashboard">
+
+			<!-- Header -->
+			<div id="header" class="not-sticky">
+				<div class="container">
+
+					<!-- Left Side Content -->
+					<div class="left-side">
+
+						<!-- Logo -->
+						<div id="logo">
+							<a href="index.html">
+								<img src="images/logo.png" alt="">
+							</a>
+							<a href="index.html" class="dashboard-logo">
+								<img src="images/logo2.png" alt="">
+							</a>
+						</div>
+
+						<!-- Mobile Navigation -->
+						<div class="mmenu-trigger">
+							<button class="hamburger hamburger--collapse" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav id="navigation" class="style-1">
+							<ul id="responsive">
+								<li>
+									<a href="listings-list-full-width.html">尋找重量</a>
+
+								</li>
+								<li>
+									<a href="teach.html">提供重量</a>
+
+								</li>
+							</ul>
+						</nav>
+						<div class="clearfix"></div>
+						<!-- Main Navigation / End -->
+
+					</div>
+					<!-- Left Side Content / End -->
+
+					<!-- Right Side Content / End -->
+					<div class="right-side">
+						<!-- Header Widget -->
+						<div class="header-widget">
+							<!-- User Menu -->
+							<div class="user-menu">
+								<!--導入使用者大頭照及姓名-->
+								<div class="user-name" id="changename">
+									<span>
+										<img src="images/userphoto/person_3.jpg" alt="">
+									</span>Tom Perrin</div>
+								<ul>
+									<li>
+										<a href="dashboard.html">
+											<i class="sl sl-icon-settings"></i> 我的航程</a>
+									</li>
+									<li>
+										<a href="dashboard-messages.html">
+											<i class="sl sl-icon-bell"></i> 通知</a>
+									</li>
+									<li>
+										<a href="dashboard-bookings.html">
+											<i class="fa fa-calendar-check-o"></i> 預約託運</a>
+									</li>
+									<li>
+										<a href="dashboard-my-listings.html">
+											<i class="sl sl-icon-layers"></i> 我的重量</a>
+									</li>
+									<li>
+										<a onClick="logout()">
+											<i class="sl sl-icon-power"></i> 登出</a>
+									</li>
+								</ul>
+							</div>
+
+							<a href="dashboard-add-listing.html" class="button border with-icon">發布重量
+								<i class="sl sl-icon-plus"></i>
+							</a>
+						</div>
+						<!-- Header Widget / End -->
+					</div>
+					<!-- Right Side Content / End -->
+
+				</div>
+			</div>
+			<!-- Header / End -->
+
+		</header>
+		<div class="clearfix"></div>
+		<!-- Header Container / End -->
+
+
+		<!-- Dashboard -->
+		<div id="dashboard">
+
+			<!-- Navigation
+	================================================== -->
+
+			<!-- Responsive Navigation Trigger -->
+			<a href="#" class="dashboard-responsive-nav-trigger">
+				<i class="fa fa-reorder"></i> Dashboard Navigation</a>
+
+			<div class="dashboard-nav">
+				<div class="dashboard-nav-inner">
+
+					<ul data-submenu-title="">
+						<li>
+							<a href="dashboard.html">
+								<i class="sl sl-icon-settings"></i> 我的航程</a>
+						</li>
+					</ul>
+
+					<ul data-submenu-title="託運行李">
+
+						<!--<li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> 訊息 <span class="nav-tag messages">2</span></a></li>-->
+						<li>
+							<a href="dashboard-bookings.html">
+								<i class="fa fa-calendar-check-o"></i> 預約託運</a>
+						</li>
+						<li>
+							<a href="dashboard-reviews-look.html">
+								<i class="sl sl-icon-star"></i> 我的託運評價</a>
+						</li>
+					</ul>
+
+					<ul data-submenu-title="運送行李">
+						<li>
+							<a>
+								<i class="sl sl-icon-layers"></i> 我的重量</a>
+							<ul>
+								<li>
+									<a href="dashboard-my-listings.html">已發布
+										<!-- <span class="nav-tag green" id="green_num"></span> -->
+									</a>
+								</li>
+								<li>
+									<a href="dashboard-my-listings.html">待審核
+										<!-- <span class="nav-tag yellow">1</span> -->
+									</a>
+								</li>
+								<li>
+									<a href="dashboard-my-listings.html">已過期
+										<!-- <span class="nav-tag red">2</span> -->
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="dashboard-reviews-look1.html">
+								<i class="sl sl-icon-star"></i> 我的運送評價</a>
+						</li>
+						<li>
+							<a href="dashboard-add-listing.html">
+								<i class="sl sl-icon-plus"></i> 發布重量</a>
+						</li>
+						<li class="active">
+							<a href="dashboard-rule-listing.html">
+								<i class="sl sl-icon-shield"></i>編輯託運規則</a>
+						</li>
+					</ul>
+
+					<ul data-submenu-title="收藏">
+
+						<li>
+							<a href="dashboard-bookmarks.html">
+								<i class="sl sl-icon-heart"></i> 我的最愛</a>
+						</li>
+					</ul>
+
+					<ul data-submenu-title="帳戶管理">
+						<li>
+							<a href="dashboard-my-profile.html">
+								<i class="sl sl-icon-user"></i> 個人資料</a>
+						</li>
+						<li>
+							<a href="dashboard-pay-listings.html">
+								<i class="sl sl-icon-credit-card"></i> 付款設置</a>
+						</li>
+						<li>
+							<a onClick="logout()">
+								<i class="sl sl-icon-power"></i> 登出</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<!-- Navigation / End -->
+
+
+			<!-- Content
+	================================================== -->
+			<div class="dashboard-content">
+
+				<!-- Titlebar -->
+				<div id="titlebar">
+					<div class="row">
+						<div class="col-md-12">
+
+							<!-- Breadcrumbs -->
+							<nav id="breadcrumbs">
+								<ul>
+									<li>
+										<a href="#">首頁</a>
+									</li>
+									<li>
+										<a href="#">我的航程</a>
+									</li>
+									<li>編輯託運規則</li>
+								</ul>
+							</nav>
+							<br>
+							<h2>編輯託運規則</h2>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+
+						<div id="add-listing">
+
+
+
+							<!-- Section -->
+							<div class="add-listing-section margin-top-45">
+
+								<!-- Headline -->
+								<div class="add-listing-headline">
+									<h3>
+										<i class="sl sl-icon-shield"></i>編輯託運規則</h3>
+
+								</div>
+
+								<div class="submit-section">
+
+									<!-- Row -->
+									<div class="row with-forms">
+
+
+										<!-- 關於我-->
+										<div class="col-md-12">
+											<h5>關於我</h5>
+											<textarea name="notes" id="notes_self" cols="30" rows="10">
+											</textarea>
+										</div>
+
+
+										<!-- 物品查看-->
+										<div class="col-md-12">
+											<h5>物品查看
+												<i class="tip" data-tip-content="為確保行李運送安全，建議您在此選項選擇『需要』"></i>
+											</h5>
+											<select class="chosen-select" id="select_check_item">
+												<option>需要</option>
+												<option>不需要</option>
+											</select>
+										</div>
+
+										<!-- 託運守則-->
+										<div class="col-md-12">
+											<h5>基本託運守則
+												<i class="tip" data-tip-content="如修改基本託運守則，本公司將不負賠償責任，並無法靜一部提供媒合服務"></i>
+											</h5>
+											<textarea name="notes" id="notes" cols="30" rows="10">
+											</textarea>
+										</div>
+
+										<div class="col-md-12">
+											<div class="checkboxes in-row margin-bottom-20">
+
+												<input id="check-a" type="checkbox" name="check">
+												<label for="check-a">同意此條款</label>
+
+											</div>
+										</div>
+
+										<div class="col-md-12">
+											<h5>進階託運守則</h5>
+											<textarea name="notes" id="notes2" cols="30" rows="10"></textarea>
+										</div>
+
+									</div>
+									<!-- Row / End -->
+
+								</div>
+							</div>
+							<!-- Section / End -->
+							<br>
+
+							<a class="button preview" onClick="store_article()">儲存託運規則</a>
+
+						</div>
+					</div>
+
+					<!-- Copyrights -->
+					<div class="col-md-12">
+						<div class="copyrights">© 2017 Sparbag. All Rights Reserved.</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- Content / End -->
+
+
+		</div>
+		<!-- Dashboard / End -->
+
+
+	</div>
+	<!-- Wrapper / End -->
+
+
+	<!-- Scripts
+================================================== -->
+	<script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="scripts/mmenu.min.js"></script>
+	<script type="text/javascript" src="scripts/chosen.min.js"></script>
+	<script type="text/javascript" src="scripts/slick.min.js"></script>
+	<script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+	<script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+	<script type="text/javascript" src="scripts/waypoints.min.js"></script>
+	<script type="text/javascript" src="scripts/counterup.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="scripts/tooltips.min.js"></script>
+	<script type="text/javascript" src="scripts/custom.js"></script>
+
+	<script>
+		var username = sessionStorage.getItem('haveuser');
+		console.log("Current User: " + username);
+		if (username !== null) {
+			replace_username(username);
+			// get_green_num();
+		}
+
+		axios.post('/api/load_article', {
+				username: username
+			})
+			.then(function (response) {
+
+				console.log(response);
+				$("#notes_self").text(response.data[0].about_me);
+				$("#notes").text(response.data[0].rule_1);
+				$("#notes2").text(response.data[0].rule_2);
+
+				if (response.data[0].check_item == true)
+					$('#select_check_item')[0].selectedIndex = 0;
+				else
+					$('#select_check_item')[0].selectedIndex = 1;
+
+			})
+			.catch(function (error) {
+				alert("Something Wrong!");
+			});
+	</script>
+
+	<!-- Maps -->
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+	<script type="text/javascript" src="scripts/infobox.min.js"></script>
+	<script type="text/javascript" src="scripts/markerclusterer.js"></script>
+	<script type="text/javascript" src="scripts/maps.js"></script>
+
+	<!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
+	<link href="css/plugins/datedropper.css" rel="stylesheet" type="text/css">
+	<script src="scripts/datedropper.js"></script>
+	<script>
+		$('#booking-date').dateDropper();
+	</script>
+
+	<!-- Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker -->
+	<script src="scripts/timedropper.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/plugins/timedropper.css">
+	<script>
+		this.$('#booking-time').timeDropper({
+			setCurrentTime: false,
+			meridians: true,
+			primaryColor: "#7ccad3",
+			borderColor: "#7ccad3",
+			minutesInterval: '15'
+		});
+
+		var $clocks = $('.td-input');
+		_.each($clocks, function (clock) {
+			clock.value = null;
+		});
+	</script>
+
+	<!-- Booking Widget - Quantity Buttons -->
+	<script src="scripts/quantityButtons.js"></script>
+
+
+
+	<!-- Style Switcher
+================================================== -->
+	<script src="scripts/switcher.js"></script>
+
+
+	<!-- Style Switcher / End -->
+
+
+	<!-- Opening hours added via JS (this is only for demo purpose) -->
+	<script>
+		$(".opening-day.js-demo-hours .chosen-select").each(function () {
+			$(this).append('' +
+				'<option></option>' +
+				'<option>Closed</option>' +
+				'<option>1 AM</option>' +
+				'<option>2 AM</option>' +
+				'<option>3 AM</option>' +
+				'<option>4 AM</option>' +
+				'<option>5 AM</option>' +
+				'<option>6 AM</option>' +
+				'<option>7 AM</option>' +
+				'<option>8 AM</option>' +
+				'<option>9 AM</option>' +
+				'<option>10 AM</option>' +
+				'<option>11 AM</option>' +
+				'<option>12 AM</option>' +
+				'<option>1 PM</option>' +
+				'<option>2 PM</option>' +
+				'<option>3 PM</option>' +
+				'<option>4 PM</option>' +
+				'<option>5 PM</option>' +
+				'<option>6 PM</option>' +
+				'<option>7 PM</option>' +
+				'<option>8 PM</option>' +
+				'<option>9 PM</option>' +
+				'<option>10 PM</option>' +
+				'<option>11 PM</option>' +
+				'<option>12 PM</option>');
+		});
+	</script>
+
+	<!-- DropZone | Documentation: http://dropzonejs.com -->
+	<script type="text/javascript" src="scripts/dropzone.js"></script>
+
+
+</body>
+
+</html>
