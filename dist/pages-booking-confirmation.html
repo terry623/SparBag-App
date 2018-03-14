@@ -13,6 +13,62 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/colors/main.css" id="colors">
 
+	<style>
+			body {margin:0;}
+			
+			.navbar {
+			  overflow: hidden;
+			  background-color: #fff;
+			  position: fixed;
+			  bottom: 0;
+			  width: 100%;
+			  box-shadow:0px 0px 5px 0px #cccccc;
+			  
+			  
+			}
+			
+			.navbar a {
+				 float: left;
+				width: 20%;
+				text-align: center;
+				padding: 15px 0;
+				transition: all 0.3s ease;
+				color: black;
+				font-size: 25px;
+			}
+			
+			
+			
+			.navbar a.active {
+			  color: black;
+			}
+			
+			.main {
+			  padding: 16px;
+			  margin-bottom: 30px;
+			}
+			#Img1{
+				opacity: 0.7;
+				filter: alpha(opacity=50); 
+			}
+			#Img2{
+				opacity: 0.5;
+				filter: alpha(opacity=50);
+			}
+			
+			#back a {
+				 float: left;
+				width: 10%;
+				text-align: center;
+				padding: 19px 0;
+				transition: all 0.3s ease;
+				color: #7ccad3;
+				font-size: 30px;
+			}
+			
+			
+			</style>
+
 	<script>
 		var replace_username = function (user) {
 			var myvar =
@@ -41,6 +97,13 @@
 
 			<!-- Header -->
 			<div id="header">
+					<div class="navbar">
+						<a class="active" href="index.html"><img src="images/home.png" width="25px"></a> 
+						<a href="listings-list-full-width.html"><img src="images/search1.png" width="25px" ></a> 
+						<a href="dashboard-add-listing.html"><img src="images/plus.png" width="25px" id="Img1" ></a> 
+						<a href="dashboard-bookmarks.html"><img src="images/heart.png" width="25px"></a>
+						<a href="dashboard-user-profile.html"><img src="images/user.png" width="25px" id="Img1"></a>
+					</div>
 				<div class="container">
 
 					<!-- Left Side Content -->
@@ -54,13 +117,7 @@
 						</div>
 
 						<!-- Mobile Navigation -->
-						<div class="mmenu-trigger">
-							<button class="hamburger hamburger--collapse" type="button">
-								<span class="hamburger-box">
-									<span class="hamburger-inner"></span>
-								</span>
-							</button>
-						</div>
+						<br><br>
 
 						<!-- Main Navigation -->
 						<nav id="navigation" class="style-1">
@@ -87,35 +144,18 @@
 						<!-- Header Widget -->
 						<div class="header-widget">
 
-							<!-- User Menu -->
-							<div class="user-menu">
-								<div class="user-name" id="changename">
-									<span>
-										<img src="images/dashboard-avatar.jpg" alt="">
-									</span>My Account</div>
-								<ul>
-									<li>
-										<a href="dashboard.html">
-											<i class="sl sl-icon-settings"></i> 我的航程</a>
-									</li>
-									<li>
-										<a href="dashboard-messages.html">
-											<i class="sl sl-icon-bell"></i> 通知</a>
-									</li>
-									<li>
-										<a href="dashboard-messages.html">
-											<i class="sl sl-icon-envelope-open"></i> 訊息</a>
-									</li>
-									<li>
-										<a href="dashboard-bookings.html">
-											<i class="fa fa-calendar-check-o"></i> 預約託運</a>
-									</li>
-									<li>
-										<a onClick="logout()">
-											<i class="sl sl-icon-power"></i> 登出</a>
-									</li>
-								</ul>
-							</div>
+												<!-- User Menu -->
+					<div class="user-menu">
+							<!--導入使用者大頭照及姓名-->
+							<div class="user-name"><span><img src="images/userphoto/person_3.jpg" alt=""></span>Tom Perrin</div>
+							<ul>
+								<li><a href="dashboard.html"><i class="sl sl-icon-settings"></i> 我的航程</a></li>
+								<li><a href="dashboard-messages.html"><i class="sl sl-icon-bell"></i> 通知</a></li>
+								<li><a href="dashboard-bookings.html"><i class="fa fa-calendar-check-o"></i> 預約託運</a></li>
+								<li><a href="dashboard-my-listings.html"><i class="sl sl-icon-layers"></i> 我的重量</a></li>
+								<!--<li><a href="index.html"><i class="sl sl-icon-power"></i> 登出</a></li>-->
+							</ul>
+						</div>
 
 							<a href="dashboard-add-listing.html" class="button border with-icon">發布重量
 								<i class="sl sl-icon-plus"></i>
@@ -142,18 +182,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-
+							<div style="text-align: center;">
 						<h2>預約確認</h2>
-
+					</div>
 						<!-- Breadcrumbs -->
-						<nav id="breadcrumbs">
-							<ul>
-								<li>
-									<a href="#">首頁</a>
-								</li>
-								<li>預約確認</li>
-							</ul>
-						</nav>
+						
 
 					</div>
 				</div>
@@ -191,133 +224,7 @@
 		<div id="footer" class="sticky-footer">
 			<!-- Main -->
 			<div class="container">
-				<div class="row">
-					<div class="col-md-4 col-sm-6">
-						<img class="footer-logo" src="images/logo.png" alt="">
-						<br>
-						<br>
-						<p>SPARBAG是一套更聰明、更便利的行李重量分享平台。藉由社群形成共享生態圈，利用同一航班去程與回程旅客行李重量落差，將重量的主導權還給每一為旅客，SPARBAG全力打造更具安全與信譽的共享未來，帶領旅人以 「分享」建構未來的旅遊新世界。
-						</p>
-
-					</div>
-
-					<div class="col-md-3 col-sm-6 ">
-						<h4>探索</h4>
-						<ul class="footer-links">
-							<li>
-								<a href="pages-blog.html">旅遊誌</a>
-							</li>
-							<li>
-								<a href="#">託運行李</a>
-							</li>
-							<li>
-								<a href="#">運送行李</a>
-							</li>
-							<li>
-								<a href="#">信任與安全</a>
-							</li>
-							<li>
-								<a href="#">運送義務</a>
-							</li>
-							<li>
-								<a href="#">SparStation</a>
-							</li>
-						</ul>
-						<ul class="footer-links">
-							<li>
-								<a href="#">常見問題</a>
-							</li>
-							<li>
-								<a href="#">部落格</a>
-							</li>
-							<li>
-								<a href="#">關於我們</a>
-							</li>
-							<li>
-								<a href="#">如何運作</a>
-							</li>
-							<li>
-								<a href="pages-contact.html">聯絡我們</a>
-							</li>
-						</ul>
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="col-md-3  col-sm-10">
-						<h4>聯絡我們</h4>
-						<div class="text-widget">
-							<span>51591 彰化縣大村鄉學府路168號</span>
-							<br> 聯絡電話:
-							<span>(0917) 680-220 </span>
-							<br> 聯絡電話:
-							<span>(0903) 501-689 </span>
-							<br> E-Mail:
-							<span>
-								<a href="#">sparbag2017@gmail.com</a>
-							</span>
-							<br>
-						</div>
-
-						<ul class="social-icons margin-top-10">
-							<li>
-								<a class="facebook" href="#">
-									<i class="icon-facebook"></i>
-								</a>
-							</li>
-							<li>
-								<a class="instagram" href="#">
-									<i class="icon-instagram"></i>
-								</a>
-							</li>
-							<li>
-								<a class="youtube" href="#">
-									<i class="icon-youtube"></i>
-								</a>
-							</li>
-							<!--
-					<li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
-					<li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li>-->
-						</ul>
-
-					</div>
-					<div class="col-md-2 col-sm-6 ">
-						<h4></h4>
-						<br>
-						<div class="col-md-14">
-							<select class="chosen-select">
-								<option label="blank">繁體中文</option>
-								<option>簡體中文</option>
-								<option>日本語</option>
-								<option>한국어</option>
-								<option>English-US</option>
-								<option>English-UK</option>
-								<option>Français</option>
-								<option>Deutsch</option>
-								<option>ไทย</option>
-								<option>Nederlands</option>
-							</select>
-						</div>
-						<br>
-						<div class="col-md-14">
-							<select class="chosen-select">
-								<option label="blank">新台幣</option>
-								<option>美元</option>
-								<option>日元</option>
-								<option>人民幣</option>
-								<option>歐元</option>
-								<option>英鎊</option>
-								<option>韓圜</option>
-								<option>港幣</option>
-							</select>
-						</div>
-						<br>
-						<div class="clearfix"></div>
-					</div>
-
-
-
-				</div>
-
+				
 				<!-- Copyright -->
 				<div class="row">
 					<div class="col-md-12">

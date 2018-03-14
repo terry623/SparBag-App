@@ -11,7 +11,61 @@
 ================================================== -->
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/colors/main.css" id="colors">
-
+<style>
+		body {margin:0;}
+		
+		.navbar {
+		  overflow: hidden;
+		  background-color: #fff;
+		  position: fixed;
+		  bottom: 0;
+		  width: 100%;
+		  box-shadow:0px 0px 5px 0px #cccccc;
+		  
+		  
+		}
+		
+		.navbar a {
+			 float: left;
+			width: 20%;
+			text-align: center;
+			padding: 15px 0;
+			transition: all 0.3s ease;
+			color: black;
+			font-size: 25px;
+		}
+		
+		
+		
+		.navbar a.active {
+		  color: black;
+		}
+		
+		.main {
+		  padding: 16px;
+		  margin-bottom: 30px;
+		}
+		#Img1{
+			opacity: 0.7;
+			filter: alpha(opacity=50);
+		}
+		#Img2{
+			opacity: 0.5;
+			filter: alpha(opacity=50);
+		}
+		
+		#back a {
+			 float: left;
+			width: 10%;
+			text-align: center;
+			padding: 19px 0;
+			transition: all 0.3s ease;
+			color: #7ccad3;
+			font-size: 30px;
+		}
+		
+		
+</style>
 </head>
 
 <body>
@@ -25,6 +79,13 @@
 
 	<!-- Header -->
 	<div id="header" class="not-sticky">
+			<div class="navbar">
+					<a class="active" href="index.html"><img src="images/home.png" width="25px"></a> 
+					 <a href="listings-list-full-width.html"><img src="images/search.png" width="25px" id="Img2" ></a> 
+					 <a href="dashboard-add-listing.html"><img src="images/plus.png" width="25px" id="Img1" ></a> 
+					 <a href="dashboard-bookmarks.html"><img src="images/heart.png" width="25px"></a>
+					 <a href=""><img src="images/user1.png" width="25px" ></a>
+			</div>
 		<div class="container">
 			
 			<!-- Left Side Content -->
@@ -33,129 +94,16 @@
 				<!-- Logo -->
 				<div id="logo">
 					<a href="index.html"><img src="images/logo.png" alt=""></a>
-					<a href="index.html" class="dashboard-logo"><img src="images/logo2.png" alt=""></a>
 				</div>
 
-				<!-- Mobile Navigation -->
-				<div class="mmenu-trigger">
-					<button class="hamburger hamburger--collapse" type="button">
-						<span class="hamburger-box">
-							<span class="hamburger-inner"></span>
-						</span>
-					</button>
-				</div>
-
-				<!-- Main Navigation -->
-				<nav id="navigation" class="style-1">
-					<ul id="responsive">
-					   <li><a href="listings-list-full-width.html">尋找重量</a>
-							
-						</li>
-						 <li><a href="teach.html">提供重量</a>
-							
-						</li>
-
-
-                    <!--
-
-						<li><a href="#">Home</a>
-							<ul>
-								<li><a href="index.html">Home 1</a></li>
-								<li><a href="index-2.html">Home 2</a></li>
-								<li><a href="index-3.html">Home 3</a></li>
-								<li><a href="index-4.html">Home 4</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#">Listings</a>
-							<ul>
-								<li><a href="#">List Layout</a>
-									<ul>
-										<li><a href="listings-list-with-sidebar.html">With Sidebar</a></li>
-										<li><a href="listings-list-full-width.html">Full Width</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Grid Layout</a>
-									<ul>
-										<li><a href="listings-grid-with-sidebar-1.html">With Sidebar 1</a></li>
-										<li><a href="listings-grid-with-sidebar-2.html">With Sidebar 2</a></li>
-										<li><a href="listings-grid-full-width.html">Full Width</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Half Screen Map</a>
-									<ul>
-										<li><a href="listings-half-screen-map-list.html">List Layout</a></li>
-										<li><a href="listings-half-screen-map-grid-1.html">Grid Layout 1</a></li>
-										<li><a href="listings-half-screen-map-grid-2.html">Grid Layout 2</a></li>
-									</ul>
-								</li>
-								<li><a href="listings-single-page.html">Single Listing</a></li>
-							</ul>
-						</li>
-
-						<li><a class="current" href="#">User Panel</a>
-							<ul>
-								<li><a href="dashboard.html">Dashboard</a></li>
-								<li><a href="dashboard-messages.html">Messages</a></li>
-								<li><a href="dashboard-bookings.html">Bookings</a></li>
-								<li><a href="dashboard-my-listings.html">My Listings</a></li>
-								<li><a href="dashboard-reviews.html">Reviews</a></li>
-								<li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
-								<li><a href="dashboard-add-listing.html">Add Listing</a></li>
-								<li><a href="dashboard-my-profile.html">My Profile</a></li>
-								<li><a href="dashboard-invoice.html">Invoice</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#">Pages</a>
-							<ul>
-								<li><a href="pages-user-profile.html">User Profile</a></li>
-								<li><a href="pages-booking.html">Booking Page</a></li>
-								<li><a href="pages-blog.html">Blog</a>
-									<ul>
-										<li><a href="pages-blog.html">Blog</a></li>
-										<li><a href="pages-blog-post.html">Blog Post</a></li>
-									</ul>
-								</li>
-								<li><a href="pages-contact.html">Contact</a></li>
-								<li><a href="pages-coming-soon.html">Coming Soon</a></li>
-								<li><a href="pages-elements.html">Elements</a></li>
-								<li><a href="pages-pricing-tables.html">Pricing Tables</a></li>
-								<li><a href="pages-typography.html">Typography</a></li>
-								<li><a href="pages-404.html">404 Page</a></li>
-								<li><a href="pages-icons.html">Icons</a></li>
-							</ul>
-						</li>-->
-						
-					</ul>
-				</nav>
-				<div class="clearfix"></div>
-				<!-- Main Navigation / End -->
-				
-			</div>
-			<!-- Left Side Content / End -->
-
-			<!-- Right Side Content / End -->
-			<div class="right-side">
-				<!-- Header Widget -->
-				<div class="header-widget">
-					
-					<!-- User Menu -->
-					<div class="user-menu">
-					    <!--導入使用者大頭照及姓名-->
-						<div class="user-name"><span><img src="images/userphoto/person_3.jpg" alt=""></span>Tom Perrin</div>
-						<ul>
-							<li><a href="dashboard.html"><i class="sl sl-icon-settings"></i> 我的航程</a></li>
-							<li><a href="dashboard-messages.html"><i class="sl sl-icon-bell"></i> 通知</a></li>
-							<li><a href="dashboard-bookings.html"><i class="fa fa-calendar-check-o"></i> 預約託運</a></li>
-							<li><a href="dashboard-my-listings.html"><i class="sl sl-icon-layers"></i> 我的重量</a></li>
-							<li><a href="index.html"><i class="sl sl-icon-power"></i> 登出</a></li>
-						</ul>
+				<!-- Mobile Navigation--> 
+				<div class="mmenu-trigge">
+					<div id="back">
+						<a href="dashboard-my-listings.html"><i class="im im-icon-Arrow-Left"></i></a>
 					</div>
-
-					<a href="dashboard-add-listing.html" class="button border with-icon">發布重量 <i class="sl sl-icon-plus"></i></a>
 				</div>
-				<!-- Header Widget / End -->
+				<br><br>
+						
 			</div>
 			<!-- Right Side Content / End -->
 
@@ -171,57 +119,6 @@
 <!-- Dashboard -->
 <div id="dashboard">
 
-	<!-- Navigation
-	================================================== -->
-
-	<!-- Responsive Navigation Trigger -->
-	<a href="#" class="dashboard-responsive-nav-trigger"><i class="fa fa-reorder"></i> Dashboard Navigation</a>
-	
-	<div class="dashboard-nav">
-		<div class="dashboard-nav-inner">
-
-			<ul data-submenu-title="">
-				<li><a href="dashboard.html"><i class="sl sl-icon-settings"></i>  我的航程</a></li>
-			</ul>
-
-			<ul data-submenu-title="託運行李">
-				
-				<!--<li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> 訊息 <span class="nav-tag messages">2</span></a></li>-->
-				<li><a href="dashboard-bookings.html"><i class="fa fa-calendar-check-o"></i> 預約託運</a></li>
-				<li><a href="dashboard-reviews-look.html"><i class="sl sl-icon-star"></i> 我的託運評價</a></li>
-			</ul>
-			
-			<ul data-submenu-title="運送行李">
-				<li><a><i class="sl sl-icon-layers"></i> 我的重量</a>
-					<ul>
-						<li><a href="dashboard-my-listings.html">已發布 <span class="nav-tag green">6</span></a></li>
-						<li><a href="dashboard-my-listings.html">待審核 <span class="nav-tag yellow">1</span></a></li>
-						<li><a href="dashboard-my-listings.html">已過期 <span class="nav-tag red">2</span></a></li>
-					</ul>	
-				</li>
-				<li><a href="dashboard-reviews-look1.html"><i class="sl sl-icon-star"></i> 我的運送評價</a></li>
-				<li class="active"><a href="dashboard-add-listing.html"><i class="sl sl-icon-plus"></i> 發布重量</a></li>
-				<li><a href="dashboard-rule-listing.html"><i class="sl sl-icon-shield"></i>編輯託運規則</a></li>
-			</ul>
-
-			<ul data-submenu-title="收藏">
-
-			<li><a href="dashboard-bookmarks.html"><i class="sl sl-icon-heart"></i> 我的最愛</a></li>	
-			</ul>
-
-			<ul data-submenu-title="帳戶管理">
-				<li><a href="dashboard-my-profile.html"><i class="sl sl-icon-user"></i> 個人資料</a></li>
-				<li><a href="dashboard-pay-listings.html"><i class="sl sl-icon-credit-card"></i> 付款設置</a></li>
-				<li><a href="index.html"><i class="sl sl-icon-power"></i> 登出</a></li>
-			</ul>
-
-		</div>
-	</div>
-	<!-- Navigation / End -->
-
-
-	<!-- Content
-	================================================== -->
 	<div class="dashboard-content">
 
 		<!-- Titlebar -->
@@ -232,14 +129,14 @@
 					<!-- Breadcrumbs -->
 					<nav id="breadcrumbs">
 						<ul>
-							<li><a href="#">首頁</a></li>
-							<li><a href="#">我的航程</a></li>
-							<li>編輯重量</li>
+							
 						</ul>
 					</nav>
-					<br>
-					<h2>編輯重量</h2>
-					<h4>＃20170001</h4>
+
+					<div style="text-align: center;"></div>
+						<h2>編輯重量</h2>
+						<h4>＃20170001</h4>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -717,7 +614,8 @@
 			<div class="col-md-12">
 				<div class="copyrights">© 2017 Sparbag. All Rights Reserved.</div>
 			</div>
-
+			<br><br>
+			
 		</div>
 
 	</div>

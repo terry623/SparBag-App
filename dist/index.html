@@ -12,6 +12,50 @@
 ================================================== -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/colors/main.css" id="colors">
+
+	<style>
+			body {margin:0;}
+			
+			.navbar {
+			  overflow: hidden;
+			  background-color: #fff;
+			  position: fixed;
+			  bottom: 0;
+			  width: 100%;
+			  box-shadow:0px 0px 5px 0px #cccccc;
+			  
+			}
+			
+			.navbar a {
+				 float: left;
+				width: 20%;
+				text-align: center;
+				padding: 15px 0;
+				transition: all 0.3s ease;
+				color: black;
+				font-size: 25px;
+			}
+			
+			
+			
+			.navbar a.active {
+			  color: black;
+			}
+			
+			.main {
+			  padding: 16px;
+			  margin-bottom: 30px;
+			}
+			#Img1{
+				opacity: 0.7;
+				filter: alpha(opacity=50);
+			}
+			#Img2{
+				opacity: 0.5;
+				filter: alpha(opacity=50);
+			}
+	</style>
+			
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 	<script>
@@ -122,6 +166,13 @@
 
 			<!-- Header -->
 			<div id="header">
+					<div class="navbar">
+						<a class="active" href="index.html"><img src="images/home1.png" width="25px"></a> 
+						<a href="listings-list-full-width.html"><img src="images/search.png" width="25px" id="Img2" ></a> 
+						<a href="dashboard-add-listing.html"><img src="images/plus.png" width="25px" id="Img1" ></a> 
+						<a href="dashboard-bookmarks.html"><img src="images/heart.png" width="25px"></a>
+						<a href="dashboard-user-profile.html"><img src="images/user.png" width="25px" id="Img1"></a>
+					</div>
 				<div class="container">
 
 					<!-- Left Side Content -->
@@ -133,15 +184,7 @@
 								<img src="images/logo.png" alt="">
 							</a>
 						</div>
-
-						<!-- Mobile Navigation -->
-						<div class="mmenu-trigger">
-							<button class="hamburger hamburger--collapse" type="button">
-								<span class="hamburger-box">
-									<span class="hamburger-inner"></span>
-								</span>
-							</button>
-						</div>
+						<br><br>
 
 
 						<!-- Main Navigation -->
@@ -321,7 +364,8 @@
 								</div>
 
 								<!-- <button class="button" onclick="window.location.href='listings-list-full-width.html'">尋找重量</button> -->
-								<button class="button" onclick="get_search()">尋找重量</button>
+								<div style="text-align: center;">	
+									<button class="button" onclick="window.location.href='listings-list-full-width.html'">尋找重量</button></div>
 
 							</div>
 						</div>
@@ -341,8 +385,7 @@
 				<div class="col-md-12">
 					<h3 class="headline centered margin-top-75">
 						熱門航點
-						<span>Browse
-							<i>the most desirable</i> categories</span>
+						<span></span>
 					</h3>
 				</div>
 
@@ -444,7 +487,7 @@
 					<div class="col-md-12">
 						<h3 class="headline centered margin-bottom-45">
 							推薦航點
-							<span>Discover top-rated local businesses</span>
+							<span></span>
 						</h3>
 					</div>
 
@@ -675,174 +718,12 @@
 		</section>
 		<!-- Fullwidth Section / End -->
 
-
-		<!-- Info Section -->
-		<div class="container">
-
-
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<h2 class="headline centered margin-top-80">
-						簡易使用輕鬆旅行
-						<span class="margin-top-25">Explore some of the best tips from around the world from our partners and friends. Discover some of the most popular
-							listings in Sydney.</span>
-					</h2>
-				</div>
-			</div>
-
-			<div class="row icons-container">
-
-				<div class="style-1">
-					<!-- Tabs Navigation -->
-					<ul class="tabs-nav">
-						<li class="active">
-							<a href="#tab1b">使用重量</a>
-						</li>
-						<li>
-							<a href="#tab2b">分享重量</a>
-						</li>
-
-
-					</ul>
-
-					<!-- Tabs Content -->
-					<div class="tabs-container">
-
-						<!-- 買家使用說明 -->
-						<div class="tab-content" id="tab1b">
-
-							<!-- Stage -->
-							<div class="col-md-3">
-								<div class="icon-box-2 with-line">
-									<i class="im im-icon-Checked-User"></i>
-									<h3>1
-										<br>註冊及身份驗證</h3>
-									<!--<p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.</p>-->
-								</div>
-							</div>
-
-
-							<!-- Stage -->
-							<div class="col-md-3">
-								<div class="icon-box-2 with-line">
-									<i class="im im-icon-Luggage-2"></i>
-									<h3>2
-										<br>選擇及預約重量</h3>
-
-								</div>
-							</div>
-
-
-							<!-- Stage -->
-							<div class="col-md-3">
-								<div class="icon-box-2 with-line">
-									<i class="im im-icon-Handshake"></i>
-									<h3>3
-										<br>會面放置行李</h3>
-
-								</div>
-							</div>
-
-
-							<!-- Stage -->
-							<div class="col-md-3">
-								<div class="icon-box-2">
-									<i class="im im-icon-Unlock-2"></i>
-									<h3>4
-										<br>解鎖領取行李</h3>
-
-								</div>
-							</div>
-
-						</div>
-
-						<div class="tab-content" id="tab2b">
-
-							<!-- 賣家使用說明 -->
-							<!-- Stage -->
-							<div class="col-md-2">
-								<div class="icon-box-2 with-line">
-									<i class="im im-icon-Checked-User"></i>
-									<h3>1
-										<br>註冊及身份驗證</h3>
-									<!--<p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.</p>-->
-								</div>
-							</div>
-
-
-							<!-- Stage -->
-							<div class="col-md-2">
-								<div class="icon-box-2 with-line">
-									<i class="im im-icon-Upload-Window"></i>
-									<h3>2
-										<br>發布重量</h3>
-
-								</div>
-							</div>
-
-
-							<!-- Stage -->
-							<div class="col-md-2">
-								<div class="icon-box-2 with-line">
-									<i class="im im-icon-Magnifi-Glass2"></i>
-									<h3>3
-										<br>會面檢查行李</h3>
-
-								</div>
-							</div>
-
-							<!-- Stage -->
-							<div class="col-md-2">
-								<div class="icon-box-2 with-line">
-									<i class="im im-icon-Unlock-2"></i>
-									<h3>4
-										<br>解鎖sparbag</h3>
-
-								</div>
-							</div>
-
-							<!-- Stage -->
-							<div class="col-md-2">
-								<div class="icon-box-2 with-line">
-									<i class="im im-icon-Plane-2"></i>
-									<h3>5
-										<br>託運行李</h3>
-
-								</div>
-							</div>
-
-
-
-							<!-- Stage -->
-							<div class="col-md-2">
-								<div class="icon-box-2">
-									<i class="im im-icon-Luggafe-Front "></i>
-									<h3>4
-										<br>領取及放置sparbag</h3>
-
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-		<!-- Info Section / End -->
-
 		<!-- Container -->
 		<div class="container">
 			<div class="row">
 
 				<div class="col-md-12">
-					<h3 class="headline centered margin-bottom-35 margin-top-70">
-						<a href="http://jerry.minews.synology.me/">旅遊誌</a>
-						<span>Browse listings in popular places</span>
-					</h3>
+						<h3 class="headline centered margin-bottom-35 margin-top-70"><a href="pages-blog.html">旅遊誌</a><span>Browse listings in popular places</span></h3>
 				</div>
 
 				<div class="col-md-4">
@@ -913,130 +794,6 @@
 		<div id="footer" class="sticky-footer">
 			<!-- Main -->
 			<div class="container">
-				<div class="row">
-					<div class="col-md-4 col-sm-6">
-						<img class="footer-logo" src="images/logo.png" alt="">
-						<br>
-						<br>
-						<p>SPARBAG是一套更聰明、更便利的行李重量分享平台。藉由社群形成共享生態圈，利用同一航班去程與回程旅客行李重量落差，將重量的主導權還給每一為旅客，SPARBAG全力打造更具安全與信譽的共享未來，帶領旅人以 「分享」建構未來的旅遊新世界。
-						</p>
-
-					</div>
-
-					<div class="col-md-3 col-sm-6 ">
-						<h4>探索</h4>
-						<ul class="footer-links">
-							<li>
-								<a href="http://jerry.minews.synology.me/">旅遊誌</a>
-							</li>
-							<li>
-								<a href="#">託運行李</a>
-							</li>
-							<li>
-								<a href="#">運送行李</a>
-							</li>
-							<li>
-								<a href="#">信任與安全</a>
-							</li>
-							<li>
-								<a href="#">運送義務</a>
-							</li>
-							<li>
-								<a href="#">SparStation</a>
-							</li>
-						</ul>
-						<ul class="footer-links">
-							<li>
-								<a href="#">常見問題</a>
-							</li>
-							<li>
-								<a href="#">部落格</a>
-							</li>
-							<li>
-								<a href="#">關於我們</a>
-							</li>
-							<li>
-								<a href="#">如何運作</a>
-							</li>
-							<li>
-								<a href="pages-contact.html">聯絡我們</a>
-							</li>
-						</ul>
-						<div class="clearfix"></div>
-					</div>
-
-					<div class="col-md-3  col-sm-10">
-						<h4>聯絡我們</h4>
-						<div class="text-widget">
-							<span>51591 彰化縣大村鄉學府路168號</span>
-							<br> 聯絡電話:
-							<span>(0917) 680-220 </span>
-							<br> 聯絡電話:
-							<span>(0903) 501-689 </span>
-							<br> E-Mail:
-							<span>
-								<a href="#">sparbag2017@gmail.com</a>
-							</span>
-							<br>
-						</div>
-
-						<ul class="social-icons margin-top-10">
-							<li>
-								<a class="facebook" href="#">
-									<i class="icon-facebook"></i>
-								</a>
-							</li>
-							<li>
-								<a class="instagram" href="#">
-									<i class="icon-instagram"></i>
-								</a>
-							</li>
-							<li>
-								<a class="youtube" href="#">
-									<i class="icon-youtube"></i>
-								</a>
-							</li>
-						</ul>
-
-					</div>
-					<div class="col-md-2 col-sm-6 ">
-						<h4></h4>
-						<br>
-						<div class="col-md-14">
-							<select class="chosen-select">
-								<option label="blank">繁體中文</option>
-								<option>簡體中文</option>
-								<option>日本語</option>
-								<option>한국어</option>
-								<option>English-US</option>
-								<option>English-UK</option>
-								<option>Français</option>
-								<option>Deutsch</option>
-								<option>ไทย</option>
-								<option>Nederlands</option>
-							</select>
-						</div>
-						<br>
-						<div class="col-md-14">
-							<select class="chosen-select">
-								<option label="blank">新台幣</option>
-								<option>美元</option>
-								<option>日元</option>
-								<option>人民幣</option>
-								<option>歐元</option>
-								<option>英鎊</option>
-								<option>韓圜</option>
-								<option>港幣</option>
-							</select>
-						</div>
-						<br>
-						<div class="clearfix"></div>
-					</div>
-
-
-
-				</div>
-
 				<!-- Copyright -->
 				<div class="row">
 					<div class="col-md-12">
@@ -1047,6 +804,7 @@
 			</div>
 
 		</div>
+		<br><br>
 		<!-- Footer / End -->
 
 

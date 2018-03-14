@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<head>
+
+<!-- Basic Page Needs
+================================================== -->
+<title>Sperbag：行李重量分享平台</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+================================================== -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/colors/main.css" id="colors">
+
+
+</head>
+
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header Container
+================================================== -->
+<header id="header-container">
+
+	<!-- Header -->
+	<div id="header">
+	   		   
+		<div class="container">
+			
+			<!-- Left Side Content -->
+			<div class="left-side">
+				
+				<!-- Logo -->
+				<div id="logo">
+					<a href="index.html"><img src="images/logo.png" alt=""></a>
+				</div>
+
+				<!-- Mobile Navigation -->
+				<div class="mmenu-trigger">
+					<button class="hamburger hamburger--collapse" type="button">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</div>
+
+
+				<!-- Main Navigation -->
+				<nav id="navigation" class="style-1">
+					<ul id="responsive">
+                   
+					    <li><a href="listings-list-full-width.html">尋找重量</a>
+							
+						</li>
+						 <li><a href="teach.html">提供重量</a>
+							
+						</li>
+
+
+
+                    <!--
+						<li><a class="current" href="#">Home</a>
+							<ul>
+								<li><a href="index.html">Home 1</a></li>
+								<li><a href="index-2.html">Home 2</a></li>
+								<li><a href="index-3.html">Home 3</a></li>
+								<li><a href="index-4.html">Home 4</a></li>
+							</ul>
+						</li>
+
+						<li><a href="#">Listings</a>
+							<ul>
+								<li><a href="#">List Layout</a>
+									<ul>
+										<li><a href="listings-list-with-sidebar.html">With Sidebar</a></li>
+										<li><a href="listings-list-full-width.html">Full Width</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Grid Layout</a>
+									<ul>
+										<li><a href="listings-grid-with-sidebar-1.html">With Sidebar 1</a></li>
+										<li><a href="listings-grid-with-sidebar-2.html">With Sidebar 2</a></li>
+										<li><a href="listings-grid-full-width.html">Full Width</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Half Screen Map</a>
+									<ul>
+										<li><a href="listings-half-screen-map-list.html">List Layout</a></li>
+										<li><a href="listings-half-screen-map-grid-1.html">Grid Layout 1</a></li>
+										<li><a href="listings-half-screen-map-grid-2.html">Grid Layout 2</a></li>
+									</ul>
+								</li>
+								<li><a href="listings-single-page.html">Single Listing</a></li>
+							</ul>
+						</li>
+
+						<li><a href="#">User Panel</a>
+							<ul>
+								<li><a href="dashboard.html">Dashboard</a></li>
+								<li><a href="dashboard-messages.html">Messages</a></li>
+								<li><a href="dashboard-bookings.html">Bookings</a></li>
+								<li><a href="dashboard-my-listings.html">My Listings</a></li>
+								<li><a href="dashboard-reviews.html">Reviews</a></li>
+								<li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
+								<li><a href="dashboard-add-listing.html">Add Listing</a></li>
+								<li><a href="dashboard-my-profile.html">My Profile</a></li>
+								<li><a href="dashboard-invoice.html">Invoice</a></li>
+							</ul>
+						</li>
+
+						<li><a href="#">Pages</a>
+							<ul>
+								<li><a href="pages-user-profile.html">User Profile</a></li>
+								<li><a href="pages-booking.html">Booking Page</a></li>
+								<li><a href="pages-blog.html">Blog</a>
+									<ul>
+										<li><a href="pages-blog.html">Blog</a></li>
+										<li><a href="pages-blog-post.html">Blog Post</a></li>
+									</ul>
+								</li>
+								<li><a href="pages-contact.html">Contact</a></li>
+								<li><a href="pages-coming-soon.html">Coming Soon</a></li>
+								<li><a href="pages-elements.html">Elements</a></li>
+								<li><a href="pages-pricing-tables.html">Pricing Tables</a></li>
+								<li><a href="pages-typography.html">Typography</a></li>
+								<li><a href="pages-404.html">404 Page</a></li>
+								<li><a href="pages-icons.html">Icons</a></li>
+							</ul>
+						</li>
+					-->	
+					</ul>
+				</nav>
+
+				<div class="clearfix"></div>
+				<!-- Main Navigation / End -->
+				
+			</div>
+			<!-- Left Side Content / End -->
+            
+
+			<!-- Right Side Content / End -->
+			<div class="right-side">
+				<div class="header-widget">
+				   
+					<a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim">登入/註冊</a>
+					<a href="dashboard-add-listing.html" class="button border with-icon">發布重量 <i class="sl sl-icon-plus"></i></a>
+				</div>
+			</div>
+			<!-- Right Side Content / End -->
+
+			<!-- Sign In Popup -->
+			<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+
+				<div class="small-dialog-header">
+					<h3>Sign In</h3>
+				</div>
+
+				<!--Tabs -->
+				<div class="sign-in-form style-1">
+
+					<ul class="tabs-nav">
+						<li class=""><a href="#tab1">登入</a></li>
+						<li><a href="#tab2">註冊</a></li>
+					</ul>
+
+					<div class="tabs-container alt">
+
+						<!-- Login -->
+						<div class="tab-content" id="tab1" style="display: none;">
+							<form method="post" class="login">
+
+								<p class="form-row form-row-wide">
+									<label for="username">帳號:
+										<i class="im im-icon-Male"></i>
+										<input type="text" class="input-text" name="username" id="username" value="" />
+									</label>
+								</p>
+
+								<p class="form-row form-row-wide">
+									<label for="password">密碼:
+										<i class="im im-icon-Lock-2"></i>
+										<input class="input-text" type="password" name="password" id="password"/>
+									</label>
+									<span class="lost_password">
+										<a href="#" >忘記密碼?</a>
+									</span>
+								</p>
+
+								<div class="form-row ">
+								<div style="text-align: center;">
+									<input type="submit" class="button border margin-top-5" name="login" value="登入" /></div>
+								<!--	
+									<div class="checkboxes margin-top-10">
+										<input id="remember-me" type="checkbox" name="check">
+										<label for="remember-me">Remember Me</label>
+									</div>
+								-->	
+								</div>
+								
+							</form>
+						</div>
+
+						<!-- Register -->
+						<div class="tab-content" id="tab2" style="display: none;">
+
+							<form method="post" class="register">
+								
+							<p class="form-row form-row-wide">
+								<label for="username2">帳號:
+									<i class="im im-icon-Male"></i>
+									<input type="text" class="input-text" name="username" id="username2" value="" />
+								</label>
+							</p>
+								
+							<p class="form-row form-row-wide">
+								<label for="email2">電子郵件:
+									<i class="im im-icon-Mail"></i>
+									<input type="text" class="input-text" name="email" id="email2" value="" />
+								</label>
+							</p>
+
+							<p class="form-row form-row-wide">
+								<label for="password1">密碼:
+									<i class="im im-icon-Lock-2"></i>
+									<input class="input-text" type="password" name="password1" id="password1"/>
+								</label>
+							</p>
+                        <!--
+							<p class="form-row form-row-wide">
+								<label for="password2">密碼驗證:
+									<i class="im im-icon-Lock-2"></i>
+									<input class="input-text" type="password" name="password2" id="password2"/>
+								</label>
+							</p>
+                        -->
+							<p class="form-row form-row-wide">
+								<label for="passportnumber">護照號碼:
+									<i class="im im-icon-Plane"></i>
+									<input type="text" class="input-text" name="passportnumber" id="passportnumber" value="" />
+								</label>
+							</p>
+                            <div style="text-align: center;">
+							<input type="submit" class="button border fw margin-top-10" name="register" value="註冊" /></div>
+	
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- Sign In Popup / End -->
+
+		</div>
+	</div>
+	<!-- Header / End -->
+
+</header>
+<div class="clearfix"></div>
+<!-- Header Container / End -->
+
+
+
+
+<!-- Banner
+================================================== -->
+<div class="main-search-container" data-background-image="images/background.png">
+	<div class="main-search-inner">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+				  <div style="text-align: center;">
+					<h2>你的旅程。從這裡開始</h2>
+					<h4>預約行李托運，輕鬆旅行</h4>
+                  </div>
+					<div class="main-search-input">
+
+						<div class="main-search-input-item">
+							<input type="text" placeholder="航班編號/班機號碼" value=""/>
+						</div>
+                    
+                        <div class="main-search-input-item">
+						<input type="text" id="booking-date" data-lang="en" data-large-mode="true" data-large-default="true" data-min-year="2017" data-max-year="2020" data-disabled-days="08/17/2017,08/18/2017">
+					</div>
+                      
+                      <!--
+						<div class="main-search-input-item location">
+							<input type="text" placeholder="Location" value=""/>
+							<a href="#"><i class="fa fa-dot-circle-o"></i></a>
+						</div>
+                   
+						<div class="main-search-input-item">
+							<select data-placeholder="All Categories" class="chosen-select" >
+								<option>All Categories</option>	
+								<option>Shops</option>
+								<option>Hotels</option>
+								<option>Restaurants</option>
+								<option>Fitness</option>
+								<option>Events</option>
+							</select>
+						</div>
+
+						   -->
+
+						
+                 
+						<button class="button" onclick="window.location.href='listings-list-full-width.html'">尋找重量</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- Content
+================================================== -->
+<div class="container">
+	<div class="row">
+
+		<div class="col-md-12">
+			<h3 class="headline centered margin-top-75">
+				熱門航點
+				<span>Browse <i>the most desirable</i> categories</span>
+			</h3>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- Categories Carousel -->
+<div class="fullwidth-carousel-container margin-top-25">
+	<div class="fullwidth-slick-carousel category-carousel">
+
+		<!-- Item -->
+		<div class="fw-carousel-item">
+
+			<!-- this (first) box will be hidden under 1680px resolution -->
+			<div class="category-box-container half">
+				<a href="listings-list-full-width2.html" class="category-box" data-background-image="images/category-box-01.jpg">
+					<div class="category-box-content">
+						<h3>洛杉磯</h3>
+						<span>64 listings</span>
+					</div>
+					<span class="category-box-btn">查看重量</span>
+				</a>
+			</div>
+
+			<div class="category-box-container half">
+				<a href="listings-list-full-width2.html" class="category-box" data-background-image="images/category-box-02.jpg">
+					<div class="category-box-content">
+						<h3>紐約</h3>
+						<span>14 listings</span>
+					</div>
+					<span class="category-box-btn">查看重量</span>
+				</a>
+			</div>
+		</div>
+
+		<!-- Item -->
+		<div class="fw-carousel-item">
+			<div class="category-box-container">
+				<a href="listings-list-full-width2.html" class="category-box" data-background-image="images/category-box-03.jpg">
+					<div class="category-box-content">
+						<h3>倫敦</h3>
+						<span>67 listings</span>
+					</div>
+					<span class="category-box-btn">查看重量</span>
+				</a>
+			</div>
+		</div>
+
+		<!-- Item -->
+		<div class="fw-carousel-item">
+			<div class="category-box-container">
+				<a href="listings-list-full-width2.html" class="category-box" data-background-image="images/category-box-04.jpg">
+					<div class="category-box-content">
+						<h3>巴黎</h3>
+						<span>27 listings</span>
+					</div>
+					<span class="category-box-btn">查看重量</span>
+				</a>
+			</div>
+		</div>
+
+		<!-- Item -->
+		<div class="fw-carousel-item">
+			<div class="category-box-container">
+				<a href="listings-list-full-width2.html" class="category-box" data-background-image="images/category-box-05.jpg">
+					<div class="category-box-content">
+						<h3>上海</h3>
+						<span>22 listings</span>
+					</div>
+					<span class="category-box-btn">查看重量</span>
+				</a>
+			</div>
+		</div>
+
+		<!-- Item -->
+		<div class="fw-carousel-item">
+			<div class="category-box-container">
+				<a href="listings-list-full-width2.html" class="category-box" data-background-image="images/category-box-06.jpg">
+					<div class="category-box-content">
+						<h3>東京</h3>
+						<span>130 listings</span>
+					</div>
+					<span class="category-box-btn">查看重量</span>
+				</a>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- Categories Carousel / End -->
+
+
+
+
+
+<!-- Fullwidth Section -->
+<section class="fullwidth margin-top-65 padding-top-75 padding-bottom-70" data-background-color="#f8f8f8">
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+				<h3 class="headline centered margin-bottom-45">
+					推薦航點
+					<span>Discover top-rated local businesses</span>
+				</h3>
+			</div>
+
+			<div class="col-md-12">
+				<div class="simple-slick-carousel dots-nav">
+
+				<!-- Listing Item -->
+				<div class="carousel-item">
+					<a href="listings-single-page.html" class="listing-item-container">
+						<div class="listing-item">
+							<img src="images/category-box-01.jpg" alt="">
+
+							<div class="listing-item-details">
+								<ul>
+									<li>APR 10 ,2017</li>
+
+								</ul>
+                                
+							</div>
+							    
+							<div class="listing-item-content">
+								<span class="tag">5 kg</span>
+								
+								<h3>TPE&nbsp;<i class="im im-icon-Arrow-Right"></i>&nbsp;LAX&nbsp;</h3>
+								<span>CI005</span>
+							</div>
+							<span class="like-icon"></span>
+						</div>
+						<div style="text-align:right;">
+						<div class="star-rating" data-rating="3.5">
+
+							<div class="rating-counter">
+							  <li>John Doe</li>
+                              <div class="user-name" ><span><img src="images/userphoto/person_1.jpg" alt=""></span></div>
+							</div>
+							
+						</div>
+						</div>
+					</a>
+				</div>
+				<!-- Listing Item / End -->
+
+				<!-- Listing Item -->
+				<div class="carousel-item">
+					<a href="listings-single-page.html" class="listing-item-container">
+						<div class="listing-item">
+							<img src="images/category-box-06.jpg" alt="">
+							<div class="listing-item-details">
+								<ul>
+									<li>JUN 10 ,2018</li>
+								</ul>
+							</div>
+							<div class="listing-item-content">
+								<span class="tag">3kg</span>
+								<h3>TPE&nbsp;<i class="im im-icon-Arrow-Right"></i>&nbsp;HND&nbsp;</h3>
+								<span>NH824</span>
+							</div>
+							<span class="like-icon"></span>
+						</div>
+						<div style="text-align:right;">
+						<div class="star-rating" data-rating="5.0">
+							<div class="rating-counter">
+							  <li>Alen Lee</li>
+                              <div class="user-name" ><span><img src="images/userphoto/person_2.jpg" alt=""></span></div>
+							</div>
+						</div>
+						</div>
+					</a>
+				</div>
+				<!-- Listing Item / End -->		
+
+				<!-- Listing Item -->
+				<div class="carousel-item">
+					<a href="listings-single-page.html" class="listing-item-container">
+						<div class="listing-item">
+							<img src="images/category-box-03.jpg" alt="">
+							<div class="listing-item-details">
+								<ul>
+									<li>JUN 24 ,2018</li>
+								</ul>
+							</div>
+							<div class="listing-item-content">
+								<span class="tag">3kg</span>
+								<h3>TPE&nbsp;<i class="im im-icon-Arrow-Right"></i>&nbsp;LHR&nbsp;</h3>
+								<span>BR67</span>
+							</div>
+							<span class="like-icon"></span>
+						</div>
+						<div style="text-align:right;">
+						<div class="star-rating" data-rating="4.5">
+							<div class="rating-counter">
+							  <li>Jerry Wun</li>
+                              <div class="user-name" ><span><img src="images/userphoto/person_3.jpg" alt=""></span></div>
+							</div>
+						</div>
+						</div>
+					</a>
+				</div>
+				<!-- Listing Item / End -->
+
+				<!-- Listing Item -->
+			<div class="carousel-item">
+					<a href="listings-single-page.html" class="listing-item-container">
+						<div class="listing-item">
+							<img src="images/category-box-05.jpg" alt="">
+							<div class="listing-item-details">
+								<ul>
+									<li>FRB 7 ,2018</li>
+								</ul>
+							</div>
+							<div class="listing-item-content">
+								<span class="tag">4kg</span>
+								<h3>PVG&nbsp;<i class="im im-icon-Arrow-Right"></i>&nbsp;TPE&nbsp;</h3>
+								<span>BR711</span>
+							</div>
+							<span class="like-icon"></span>
+						</div>
+						<div style="text-align:right;">
+						<div class="star-rating" data-rating="3.5">
+							<div class="rating-counter">
+							  <li>Po-chen Chang</li>
+                              <div class="user-name" ><span><img src="images/userphoto/person_2.jpg" alt=""></span></div>
+							</div>
+						</div>
+						</div>
+					</a>
+				</div>
+				<!-- Listing Item / End -->
+
+				<!-- Listing Item -->
+				<div class="carousel-item">
+					<a href="listings-single-page.html" class="listing-item-container">
+						<div class="listing-item">
+							<img src="images/category-box-07.jpg" alt="">
+							<div class="listing-item-details">
+								<ul>
+									<li>MAY 13 ,2018</li>
+								</ul>
+							</div>
+							<div class="listing-item-content">
+								<span class="tag">3kg</span>
+								<h3>TPE&nbsp;<i class="im im-icon-Arrow-Right"></i>&nbsp;KUL&nbsp;</h3>
+								<span>D7379</span>
+							</div>
+							<span class="like-icon"></span>
+						</div>
+						<div style="text-align:right;">
+						<div class="star-rating" data-rating="4.5">
+							<div class="rating-counter">
+							  <li>Lim Lay Siong</li>
+                              <div class="user-name" ><span><img src="images/userphoto/person_3.jpg" alt=""></span></div>
+							</div>
+						</div>
+						</div>
+					</a>
+				</div>
+				<!-- Listing Item / End -->
+
+				<!-- Listing Item -->
+				<div class="carousel-item">
+					<a href="listings-single-page.html" class="listing-item-container">
+						<div class="listing-item">
+							<img src="images/category-box-09.jpg" alt="">
+							<div class="listing-item-details">
+								<ul>
+									<li>JUN 6 ,2018</li>
+								</ul>
+							</div>
+							<div class="listing-item-content">
+								<span class="tag">7kg</span>
+								<h3>TPE&nbsp;<i class="im im-icon-Arrow-Right"></i>&nbsp;SFO&nbsp;</h3>
+								<span>UA872</span>
+							</div>
+							<span class="like-icon"></span>
+						</div>
+						<div style="text-align:right;">
+						<div class="star-rating" data-rating="3.0">
+							<div class="rating-counter">
+							  <li>YUN-YOU Chen</li>
+                              <div class="user-name" ><span><img src="images/userphoto/person_1.jpg" alt=""></span></div>
+							</div>
+						</div>
+						</div>
+					</a>
+				</div>
+				<!-- Listing Item / End -->
+				</div>
+				
+                <div class="col-md-12 centered-content">
+				<a href="listings-list-full-width.html" class="button border margin-top-10">查看更多航程</a>
+				
+			</div>
+			</div>
+
+		</div>
+	</div>
+
+</section>
+<!-- Fullwidth Section / End -->
+
+
+<!-- Info Section -->
+<div class="container">
+
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h2 class="headline centered margin-top-80">
+				簡易使用輕鬆旅行
+				<span class="margin-top-25">Explore some of the best tips from around the world from our partners and friends.  Discover some of the most popular listings in Sydney.</span>
+			</h2>
+		</div>
+	</div>
+   
+	<div class="row icons-container">
+	    
+
+ 
+       
+      
+		<div class="style-1">
+				<!-- Tabs Navigation -->
+				<ul class="tabs-nav">
+					<li class="active"><a href="#tab1b">使用重量</a></li>
+					<li><a href="#tab2b">分享重量</a></li>
+					
+                    
+				</ul>
+
+				<!-- Tabs Content -->
+				<div class="tabs-container">
+
+                    <!-- 買家使用說明 -->
+					<div class="tab-content" id="tab1b">
+						  
+						<!-- Stage -->
+						<div class="col-md-3">
+							<div class="icon-box-2 with-line">
+								<i class="im im-icon-Checked-User"></i>
+								<h3>1<br>註冊及身份驗證</h3>
+								<!--<p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.</p>-->
+							</div>
+						</div>
+
+
+						<!-- Stage -->
+						<div class="col-md-3">
+							<div class="icon-box-2 with-line">
+								<i class="im im-icon-Luggage-2"></i>
+								<h3>2<br>選擇及預約重量</h3>
+								
+							</div>
+						</div>
+
+
+						<!-- Stage -->
+						<div class="col-md-3">
+							<div class="icon-box-2 with-line">
+								<i class="im im-icon-Handshake"></i>
+								<h3>3<br>會面放置行李</h3>
+								
+							</div>
+						</div>
+				        
+
+						<!-- Stage -->
+						<div class="col-md-3">
+							<div class="icon-box-2">
+								<i class="im im-icon-Unlock-2"></i>
+								<h3>4<br>解鎖領取行李</h3>
+								
+							</div>
+						</div>
+
+					</div>
+
+					<div class="tab-content" id="tab2b">
+
+					<!-- 賣家使用說明 -->
+                        <!-- Stage -->
+						<div class="col-md-2">
+							<div class="icon-box-2 with-line">
+								<i class="im im-icon-Checked-User"></i>
+								<h3>1<br>註冊及身份驗證</h3>
+								<!--<p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.</p>-->
+							</div>
+						</div>
+
+
+						<!-- Stage -->
+						<div class="col-md-2">
+							<div class="icon-box-2 with-line">
+								<i class="im im-icon-Upload-Window"></i>
+								<h3>2<br>發布重量</h3>
+								
+							</div>
+						</div>
+
+
+						<!-- Stage -->
+						<div class="col-md-2">
+							<div class="icon-box-2 with-line">
+								<i class="im im-icon-Magnifi-Glass2"></i>
+								<h3>3<br>會面檢查行李</h3>
+								
+							</div>
+						</div>
+
+						<!-- Stage -->
+						<div class="col-md-2">
+							<div class="icon-box-2 with-line">
+								<i class="im im-icon-Unlock-2"></i>
+								<h3>4<br>解鎖sparbag</h3>
+								
+							</div>
+						</div>
+				        
+				        <!-- Stage -->
+						<div class="col-md-2">
+							<div class="icon-box-2 with-line">
+								<i class="im im-icon-Plane-2"></i>
+								<h3>5<br>託運行李</h3>
+								
+							</div>
+						</div>
+				        
+				        
+
+						<!-- Stage -->
+						<div class="col-md-2">
+							<div class="icon-box-2">
+								<i class="im im-icon-Luggafe-Front "></i>
+								<h3>4<br>領取及放置sparbag</h3>
+								
+							</div>
+						</div>
+
+
+
+					</div>
+
+                    
+
+					
+				</div>
+
+		
+                   
+
+		</div>
+		
+
+
+	</div>
+
+</div>
+<!-- Info Section / End -->
+
+
+<!-- Container -->
+<div class="container">
+	<div class="row">
+
+		<div class="col-md-12">
+			<h3 class="headline centered margin-bottom-35 margin-top-70"><a href="pages-blog.html">旅遊誌</a><span>Browse listings in popular places</span></h3>
+		</div>
+		
+		<div class="col-md-4">
+
+			<!-- Image Box -->
+			<a href="pages-blog.html" class="img-box" data-background-image="images/popular-location-01.jpg">
+				<div class="img-box-content visible">
+					<h4>巴黎</h4>
+					<span>14 Listings</span>
+				</div>
+			</a>
+
+		</div>	
+			
+		<div class="col-md-8">
+
+			<!-- Image Box -->
+			<a href="pages-blog.html" class="img-box" data-background-image="images/category-box-09.jpg">
+				<div class="img-box-content visible">
+					<h4>台北</h4>
+					<span>24 Listings</span>
+				</div>
+			</a>
+
+		</div>	
+
+		<div class="col-md-8">
+
+			<!-- Image Box -->
+			<a href="pages-blog.html" class="img-box" data-background-image="images/popular-location-04.jpg">
+				<div class="img-box-content visible">
+					<h4>新加坡</h4>
+					<span>12 Listings</span>
+				</div>
+			</a>
+
+		</div>	
+			
+		<div class="col-md-4">
+
+			<!-- Image Box -->
+			<a href="listings-list-with-sidebar.html" class="img-box" data-background-image="images/popular-location-03.jpg">
+				<div class="img-box-content visible">
+					<h4>東京</h4>
+					<span>9 Listings</span>
+				</div>
+			</a>
+
+		</div>
+
+	</div>
+</div>
+<!-- Container / End -->
+<!-- Flip banner -->
+<a href="listings-list-full-width.html" class="flip-banner parallax margin-top-65" data-background="images/slider-bg-02.jpg" data-color="#7ccad3" data-color-opacity="0.85" data-img-width="2500" data-img-height="1666">
+	<div class="flip-banner-content">
+		<h2 class="flip-visible">預約行李托運，輕鬆旅行</h2>
+		<h2 class="flip-hidden">立即使用<i class="sl sl-icon-arrow-right"></i></h2>
+	</div>
+</a>
+
+
+<!-- Footer
+================================================== -->
+<div id="footer" class="sticky-footer">
+	<!-- Main -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<img class="footer-logo" src="images/logo.png" alt="">
+				<br><br>
+				<p>SPARBAG是一套更聰明、更便利的行李重量分享平台。藉由社群形成共享生態圈，利用同一航班去程與回程旅客行李重量落差，將重量的主導權還給每一為旅客，SPARBAG全力打造更具安全與信譽的共享未來，帶領旅人以
+「分享」建構未來的旅遊新世界。</p>
+
+			</div>
+            
+			<div class="col-md-3 col-sm-6 ">
+				<h4>探索</h4>
+				<ul class="footer-links">
+					<li><a href="pages-blog.html">旅遊誌</a></li>
+					<li><a href="#">託運行李</a></li>
+					<li><a href="#">運送行李</a></li>
+					<li><a href="#">信任與安全</a></li>
+					<li><a href="#">運送義務</a></li>
+					<li><a href="#">SparStation</a></li>
+				</ul>
+				<ul class="footer-links">
+					<li><a href="#">常見問題</a></li>
+					<li><a href="#">部落格</a></li>
+					<li><a href="#">關於我們</a></li>
+					<li><a href="#">如何運作</a></li>
+					<li><a href="pages-contact.html">聯絡我們</a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>		
+
+			<div class="col-md-3  col-sm-10">
+				<h4>聯絡我們</h4>
+				<div class="text-widget">
+					<span>51591 彰化縣大村鄉學府路168號</span> <br>
+					聯絡電話: <span>(0917) 680-220 </span><br>
+					聯絡電話: <span>(0903) 501-689 </span><br>
+					E-Mail:<span> <a href="#">sparbag2017@gmail.com</a> </span><br>
+				</div>
+
+				<ul class="social-icons margin-top-10">
+					<li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+					<li><a class="instagram" href="#"><i class="icon-instagram"></i></a></li>
+					<li><a class="youtube" href="#"><i class="icon-youtube"></i></a></li>
+					<!--
+					<li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
+					<li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li>-->
+				</ul>
+
+			</div>
+			<div class="col-md-2 col-sm-6 ">
+				<h4></h4><br>
+				<div class="col-md-14">
+						<select class="chosen-select" >
+							<option label="blank">繁體中文</option>
+							<option>簡體中文</option>
+							<option>日本語</option>
+							<option>한국어</option>
+							<option>English-US</option>
+							<option>English-UK</option>
+							<option>Français</option>
+							<option>Deutsch</option>
+							<option>ไทย</option>
+							<option>Nederlands</option>
+						</select>
+				</div><br>
+				<div class="col-md-14">
+						<select class="chosen-select" >
+							<option label="blank">新台幣</option>
+							<option>美元</option>
+							<option>日元</option>
+							<option>人民幣</option>
+							<option>歐元</option>
+							<option>英鎊</option>
+							<option>韓圜</option>
+							<option>港幣</option>
+						</select>
+				</div><br>
+				<div class="clearfix"></div>
+			</div>	
+
+
+
+		</div>
+		
+		<!-- Copyright -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="copyrights">© 2017 Sparbag. All Rights Reserved.</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+<!-- Footer / End -->
+
+
+<!-- Back To Top Button -->
+<div id="backtotop"><a href="#"></a></div>
+
+
+</div>
+<!-- Wrapper / End -->
+
+
+
+<!-- Scripts
+================================================== -->
+<script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="scripts/mmenu.min.js"></script>
+<script type="text/javascript" src="scripts/chosen.min.js"></script>
+<script type="text/javascript" src="scripts/slick.min.js"></script>
+<script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+<script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+<script type="text/javascript" src="scripts/waypoints.min.js"></script>
+<script type="text/javascript" src="scripts/counterup.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scripts/tooltips.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+
+<!-- Maps -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+<script type="text/javascript" src="scripts/infobox.min.js"></script>
+<script type="text/javascript" src="scripts/markerclusterer.js"></script>
+<script type="text/javascript" src="scripts/maps.js"></script>	
+
+
+<!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
+<link href="css/plugins/datedropper.css" rel="stylesheet" type="text/css">
+<script src="scripts/datedropper.js"></script>
+<script>$('#booking-date').dateDropper();</script> 
+
+<!-- Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker -->
+<script src="scripts/timedropper.js"></script>
+<link rel="stylesheet" type="text/css" href="css/plugins/timedropper.css"> 
+<script>
+this.$('#booking-time').timeDropper({
+	setCurrentTime: false,
+	meridians: true,
+	primaryColor: "#f91942",
+	borderColor: "#f91942",
+	minutesInterval: '15'
+});
+
+var $clocks = $('.td-input');
+	_.each($clocks, function(clock){
+	clock.value = null;
+});
+</script> 
+
+<!-- Booking Widget - Quantity Buttons -->
+<script src="scripts/quantityButtons.js"></script>
+
+
+<!-- Style Switcher
+================================================== -->
+<script src="scripts/switcher.js"></script>
+
+
+<!-- Style Switcher / End -->
+
+
+</body>
+</html>
