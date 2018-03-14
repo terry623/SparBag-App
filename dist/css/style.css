@@ -241,6 +241,8 @@ img.footer-logo { max-height: 38px; width: auto; }
 	padding: 18px 0 8px 0;
 	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
 	font-size: 16px;
+	
+
 }
 
 /* Header Widget */
@@ -266,6 +268,7 @@ img.footer-logo { max-height: 38px; width: auto; }
 	top: 2px;
 	display: inline-block;
 	position: relative;
+
 }
 
 .header-widget .sign-in {
@@ -308,6 +311,7 @@ header.fullwidth .container {
 		display: inline-block;
 		margin-top: -126px;
 		position: relative;
+
 	}
 
 	.left-side {
@@ -321,7 +325,7 @@ header.fullwidth .container {
 
 #logo { margin-right: 50px; }
 
-.header-widget { text-align: right; }
+.header-widget { text-align: right;  }
 
 
 /* ---------------------------------- */
@@ -612,6 +616,7 @@ body #backtotop a { color: #fff; }
 #navigation ul li:hover > ul {
 	opacity: 1;
 	visibility: visible;
+	position: relative;
 }
 
 /* Indicator Arrow */
@@ -629,7 +634,7 @@ body #backtotop a { color: #fff; }
 	top: 7px;
 } 
 
-#navigation ul li a:only-child:after { content: ''; padding: 0; } 
+#navigation ul li a:only-child:after { content: ''; padding: 0;} 
 #navigation ul ul li a:only-child:after { content: '';}     
 
 
@@ -1450,6 +1455,8 @@ em.mm-counter+a.mm-fullsubopen+span {
     border-radius: 4px;
     cursor: pointer;
     border-image: 
+
+
 }
 
 /* Hamburger Icon */
@@ -1459,7 +1466,7 @@ em.mm-counter+a.mm-fullsubopen+span {
     left: 13px;
     transform: scale(0.67);
     -moz-transform: scale(0.70) translateY(4px);
-    position: relative;
+    position:relative;
     display: inline-block;
     cursor: pointer;
     transition-property: opacity, filter;
@@ -1472,6 +1479,7 @@ em.mm-counter+a.mm-fullsubopen+span {
     border: 0;
     margin: 0;
     overflow: visible;
+    
 }
 
 .hamburger-box {
@@ -1557,14 +1565,20 @@ em.mm-counter+a.mm-fullsubopen+span {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-start;
+
+
+
+
 	}
 
 	.header-widget a.button.border {
-		padding: 7px 16px;
+		padding: 7px 16px ;
 		background-color: transparent;
 		font-size: 16px;
 		min-width: auto;
 		float: right;
+
+
 	}
 
 	.sign-in,
@@ -1582,13 +1596,13 @@ em.mm-counter+a.mm-fullsubopen+span {
 	#header-container.header-style-2 .header-widget { float: left; margin-top: 35px; margin-bottom: -5px }
 
 	.header-widget { text-align: left; }
-	#header { padding-bottom: 0; }
+	#header { padding-bottom: 0;  }
 
 	ul.top-bar-menu { z-index: 99; position: relative; }
 
 	.header-style-2 .menu-responsive { width: 750px; margin-left: auto; margin-right: auto; float: none; padding: 0 15px; }
 
-	#header-container.header-style-2 .header-widget { width: calc(100%);  border-top: 1px solid #e0e0e0; padding-top: 30px; }
+	#header-container.header-style-2 .header-widget { width: calc(100%);  border-top: 1px solid #e0e0e0; padding-top: 30px;}
 
 }
 
