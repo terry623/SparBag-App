@@ -12,6 +12,17 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/colors/main.css" id="colors">
 
+<script>
+
+		var replace_username = function (user) {
+			var myvar =
+				'<div class="user-profile-name" id="changename"><h2>' +
+				user + '</h2></div>';
+
+			$("#changename").replaceWith(myvar);
+		}
+
+</script>
 <style>
 body {margin:0;}
 
@@ -147,8 +158,8 @@ body {margin:0;}
 			<div class="boxed-widget margin-top-30 margin-bottom-50">
 			    	<div class="user-profile-titlebar">
 					<div class="user-profile-avatar"><img src="images/userphoto/person_3.jpg" alt=""></div>
-					<div class="user-profile-name">
-					<h2>Tom Perrin</h2>
+					<div class="user-profile-name" id="changename">
+					<h2></h2>
 						
 					</div>
 				</div> 
@@ -543,9 +554,17 @@ body {margin:0;}
 <script type="text/javascript" src="scripts/tooltips.min.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
 
-
-
-
+<script>
+	var username = sessionStorage.getItem('haveuser');
+	console.log("Current User: " + username);
+	if (username !== null) {
+		replace_username(username);
+		// get_green_num();
+	}else{
+		alert("You have to login!");
+		window.history.back();
+	}
+</script>
 
 </body>
 </html>
